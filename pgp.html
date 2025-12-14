@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PGP Public Key | Douglas Weant</title>
+  <meta name="description" content="PGP public key and fingerprint for encrypted email with Douglas Weant." />
+  <meta name="color-scheme" content="dark" />
+  <link rel="icon" href="assets/dw-mark.svg" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <header class="nav">
+      <a class="brand" href="index.html" aria-label="Home">
+        <img src="assets/dw-mark.svg" alt="DW mark" />
+        <div>
+          <div class="name">Douglas Robert Weant</div>
+          <div class="tag">Cybersecurity • AI/ML • Cyber–Physical Security</div>
+        </div>
+      </a>
+      <nav class="navlinks" aria-label="Primary navigation">
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="writing.html">Writing</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+
+    <main class="hero" role="main">
+      <div class="kicker"><span class="dot"></span><span>Secure communications</span></div>
+      <h1>PGP public key</h1>
+      <p class="muted">
+        For sensitive topics, encrypted email is preferred. Download the public key below and verify the fingerprint.
+      </p>
+      <div class="hr"></div>
+
+      <section class="card full">
+        <span class="badge">Download</span>
+        <p><a class="btn" href="dw-weant-publickey.asc">Download public key (ASCII)</a></p>
+        <p class="mono">File: dw-weant-publickey.asc</p>
+      </section>
+
+      <section class="card full">
+        <span class="badge">Fingerprint</span>
+        <p class="muted">
+          <span class='mono'>DA37 81CC FFE4 8F08 B6AF F5F9 640A 90CF 4215 36DE</span>
+        </p>
+      </section>
+
+      <section class="card full">
+        <span class="badge">How to verify</span>
+        <p class="muted">
+          Verify the fingerprint out-of-band if possible. Locally:
+        </p>
+        <p class="mono">gpg --show-keys --with-fingerprint dw-weant-publickey.asc</p>
+      </section>
+    </main>
+
+    <footer class="footer" role="contentinfo">
+      <div>© Douglas Robert Weant</div>
+      <div class="mono">
+        <a href="mailto:dweant@proton.me">dweant@proton.me</a>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
