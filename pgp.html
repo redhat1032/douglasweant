@@ -22,6 +22,7 @@
       <nav class="navlinks" aria-label="Primary navigation">
         <a href="index.html">Home</a>
         <a href="work.html">Work</a>
+        <a href="research.html">Research</a>
         <a href="writing.html">Writing</a>
         <a href="about.html">About</a>
       </nav>
@@ -29,32 +30,39 @@
 
     <main class="hero" role="main">
       <div class="kicker"><span class="dot"></span><span>Secure communications</span></div>
-      <h1>PGP public key</h1>
+      <h1>PGP public key.</h1>
       <p class="muted">
-        For sensitive topics, encrypted email is preferred. Download the public key below and verify the fingerprint.
+        For sensitive topics, encrypted email is preferred. Download the public key below and verify
+        the fingerprint out-of-band before sending anything confidential.
       </p>
       <div class="hr"></div>
 
-      <section class="card full">
-        <span class="badge">Download</span>
-        <p><a class="btn" href="dw-weant-publickey.asc">Download public key (ASCII)</a></p>
-        <p class="mono">File: dw-weant-publickey.asc</p>
-      </section>
+      <div class="grid">
+        <section class="card full">
+          <span class="badge">Download</span>
+          <p><a class="btn" href="dw-weant-publickey.asc">Download public key (ASCII armored)</a></p>
+          <p class="mono">File: dw-weant-publickey.asc</p>
+        </section>
 
-      <section class="card full">
-        <span class="badge">Fingerprint</span>
-        <p class="muted">
-          <span class='mono'>DA37 81CC FFE4 8F08 B6AF F5F9 640A 90CF 4215 36DE</span>
-        </p>
-      </section>
+        <section class="card full">
+          <span class="badge">Fingerprint</span>
+          <p class="muted">Verify this fingerprint independently before trusting the key.</p>
+          <p class="mono">DA37 81CC FFE4 8F08 B6AF  F5F9 640A 90CF 4215 36DE</p>
+        </section>
 
-      <section class="card full">
-        <span class="badge">How to verify</span>
-        <p class="muted">
-          Verify the fingerprint out-of-band if possible. Locally:
-        </p>
-        <p class="mono">gpg --show-keys --with-fingerprint dw-weant-publickey.asc</p>
-      </section>
+        <section class="card full">
+          <span class="badge">How to verify locally</span>
+          <p class="muted">
+            Import the key and check the fingerprint matches what's listed above.
+            If the fingerprints don't match, do not use the key.
+          </p>
+          <p class="mono">gpg --show-keys --with-fingerprint dw-weant-publickey.asc</p>
+          <p class="muted" style="margin-top: 12px;">
+            Out-of-band verification is strongly preferred. If we've communicated before,
+            confirm the fingerprint over a separate channel.
+          </p>
+        </section>
+      </div>
     </main>
 
     <footer class="footer" role="contentinfo">

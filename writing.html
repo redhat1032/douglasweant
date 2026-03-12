@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Writing | Douglas Weant</title>
-  <meta name="description" content="Core principles and operating notes." />
+  <meta name="description" content="Core doctrine and operating principles for defensible security systems." />
   <meta name="color-scheme" content="dark" />
   <link rel="icon" href="assets/dw-mark.svg" />
   <link rel="stylesheet" href="styles.css" />
@@ -20,53 +20,132 @@
         </div>
       </a>
       <nav class="navlinks" aria-label="Primary navigation">
-        <a href="index.html" class="">Home</a>
-<a href="work.html" class="">Work</a>
-<a href="writing.html" class="active">Writing</a>
-<a href="about.html" class="">About</a>
+        <a href="index.html">Home</a>
+        <a href="work.html">Work</a>
+        <a href="research.html">Research</a>
+        <a href="writing.html" class="active">Writing</a>
+        <a href="about.html">About</a>
       </nav>
     </header>
 
     <main class="hero" role="main">
       <div class="kicker"><span class="dot"></span><span>Operator mindset. Engineer execution.</span></div>
-      <h1>Notes & Doctrine.</h1>
-      <p class="muted">Short, dense writing on Opaque Clarity Security and failure-aware systems.</p>
+      <h1>Doctrine &amp; notes.</h1>
+      <p class="muted">
+        Short, dense writing on Opaque Clarity Security, failure-aware systems, and how defenders have
+        to think. Not written for SEO. Written to clarify thinking.
+      </p>
       <div class="hr"></div>
-      
-<div class="grid">
-  <section class="card full">
-    <span class="badge">Philosophy</span>
-    <h2>Principles over Content.</h2>
-    <p class="muted">
-      I don't write for SEO. I write to clarify thinking. Below are the core tenets that drive my work at WeanTech.
-    </p>
-  </section>
 
-  <section class="card">
-    <h3>Opaque Clarity</h3>
-    <p class="muted">
-      <strong>The core doctrine:</strong> Systems should be black boxes to unauthorized users (Opaque) but completely observable to administrators (Clarity). 
-      If you cannot see the state of your system during an attack, you have already lost.
-    </p>
-  </section>
+      <div class="grid">
 
-  <section class="card">
-    <h3>The Cyber–Physical Seam</h3>
-    <p class="muted">
-      Attackers do not respect the boundary between "IT" and "Physical Security." A badge reader is a network endpoint. 
-      A server rack is a physical asset. Security that treats these as separate domains creates the gaps where breaches happen.
-    </p>
-  </section>
+        <section class="card full">
+          <span class="badge">Core doctrine</span>
+          <h2>Opaque Clarity</h2>
+          <p class="muted">
+            The central idea is simple to state and hard to execute: a system should be a black box to
+            anyone unauthorized, and completely observable to the people responsible for defending it.
+          </p>
+          <p class="muted">
+            Most organizations get this backwards in practice. Logging is underfunded. Detection rules
+            are borrowed from generic playbooks. Administrators can't tell you the state of the system
+            under normal conditions, let alone during an active incident. Meanwhile, the attack surface
+            is well-documented — in the misconfigurations, in the credential reuse, in the exception
+            that became permanent.
+          </p>
+          <p class="muted">
+            Opaque Clarity is a design constraint, not a product. It means: before you add a capability,
+            you ask two questions. What does this expose to an adversary? What does this surface to a defender?
+            If you can't answer both, the capability isn't ready.
+          </p>
+        </section>
 
-  <section class="card">
-    <h3>Failure-Aware Design</h3>
-    <p class="muted">
-      <strong>Assume the breach.</strong> Design the response mechanism <em>before</em> the incident. 
-      Evidence paths, logging retention, and recovery keys must be engineered, not improvised.
-    </p>
-  </section>
-</div>
+        <section class="card">
+          <span class="badge">Principle</span>
+          <h3>The Cyber–Physical Seam</h3>
+          <p class="muted">
+            Attackers don't organize their operations around the IT/OT boundary. They don't care that
+            the badge reader is managed by Facilities and the network switch behind it is managed by IT.
+            That jurisdictional gap is the attack surface.
+          </p>
+          <p class="muted">
+            Every physical access control device is a network endpoint. Every server rack is a physical
+            asset. Security architectures that treat these as separate domains don't have two security
+            programs — they have two sets of blind spots facing each other.
+          </p>
+          <p class="muted">
+            The seam is where incidents happen. Design for it explicitly or discover it forensically.
+          </p>
+        </section>
 
+        <section class="card">
+          <span class="badge">Principle</span>
+          <h3>Failure-Aware Design</h3>
+          <p class="muted">
+            Assume the breach. Not as a thought experiment — as a design constraint. The response
+            mechanism has to be engineered before the incident, because improvised incident response
+            under active attack is how organizations make their worst decisions.
+          </p>
+          <p class="muted">
+            Concretely: evidence paths have to be designed, not discovered. Logging retention has to
+            be deliberate, not whatever the default was. Recovery keys have to exist, be tested, and
+            be located somewhere that survives the failure mode you're recovering from.
+          </p>
+          <p class="muted">
+            The question isn't "are we secure?" It's "when something breaks, what do we actually see,
+            and what can we actually do?"
+          </p>
+        </section>
+
+        <section class="card">
+          <span class="badge">Principle</span>
+          <h3>Automation that earns trust</h3>
+          <p class="muted">
+            Automation is a force multiplier for defenders and attackers equally. The question is
+            whether your automation is auditable, reversible, and scoped.
+          </p>
+          <p class="muted">
+            An automated response that can't be explained, can't be undone, or can't be bounded is a
+            liability masquerading as a capability. Before any automated action touches production,
+            it needs a dry-run mode, a complete audit log, and a kill switch that doesn't require
+            the automation itself to be working.
+          </p>
+        </section>
+
+        <section class="card">
+          <span class="badge">Principle</span>
+          <h3>AI only where it earns its place</h3>
+          <p class="muted">
+            ML models in security are useful for exactly the problems they're suited for: behavioral
+            baselining, anomaly detection at scale, signal extraction from high-volume logs. They're
+            not useful as a substitute for threat modeling, and they're not useful as a confidence
+            signal when the training distribution doesn't match the production environment.
+          </p>
+          <p class="muted">
+            The failure mode to avoid: deploying a model that produces confident output on inputs it
+            was never trained to handle, and building detection logic on top of that confidence.
+            That's not defense — that's a gap with a dashboard in front of it.
+          </p>
+        </section>
+
+        <section class="card">
+          <span class="badge">Principle</span>
+          <h3>The insider threat problem is a behavioral problem first</h3>
+          <p class="muted">
+            Technical controls catch behavior that has already crossed a threshold. The escalation
+            that leads to a serious insider incident rarely starts there — it starts with rationalization,
+            accumulated strain, perceived injustice, and the gradual neutralization of ethical constraints.
+          </p>
+          <p class="muted">
+            Organizations that treat insider threat as purely a technical detection problem are optimizing
+            for the last mile of a much longer journey. The behavioral signals are often there earlier —
+            in access patterns that don't make sense, in communication sentiment, in the gap between
+            someone's stated role and their actual data access. The question is whether anyone is
+            looking at the right layer.
+          </p>
+        </section>
+
+      </div>
     </main>
 
     <footer class="footer" role="contentinfo">
