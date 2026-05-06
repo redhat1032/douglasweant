@@ -1,78 +1,58 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>PGP Public Key | Douglas Weant</title>
-  <meta name="description" content="PGP public key and fingerprint for encrypted email with Douglas Weant." />
-  <meta name="color-scheme" content="dark" />
-  <link rel="icon" href="assets/dw-mark.svg" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="PGP public key and fingerprint for encrypted email with Douglas Weant."/>
+  <link rel="stylesheet" href="styles.css"/>
 </head>
-
 <body>
-  <div class="container">
-    <header class="nav">
-      <a class="brand" href="index.html" aria-label="Home">
-        <img src="assets/dw-mark.svg" alt="DW mark" />
-        <div>
-          <div class="name">Douglas Robert Weant</div>
-          <div class="tag">Cybersecurity • AI/ML • Cyber–Physical Security</div>
-        </div>
-      </a>
-      <nav class="navlinks" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="work.html">Work</a>
-        <a href="research.html">Research</a>
-        <a href="writing.html">Writing</a>
-        <a href="about.html">About</a>
-      </nav>
-    </header>
 
-    <main class="hero" role="main">
-      <div class="kicker"><span class="dot"></span><span>Secure communications</span></div>
-      <h1>PGP public key.</h1>
-      <p class="muted">
-        For sensitive topics, encrypted email is preferred. Download the public key below and verify
-        the fingerprint out-of-band before sending anything confidential.
-      </p>
-      <div class="hr"></div>
+<nav class="site-nav">
+  <div class="site-nav-inner">
+    <a href="index.html" class="nav-brand">Douglas <span>Weant</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="writing.html">Writing</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
+</nav>
 
-      <div class="grid">
-        <section class="card full">
-          <span class="badge">Download</span>
-          <p><a class="btn" href="dw-weant-publickey.asc">Download public key (ASCII armored)</a></p>
-          <p class="mono">File: dw-weant-publickey.asc</p>
-        </section>
+<div class="page-wrap">
 
-        <section class="card full">
-          <span class="badge">Fingerprint</span>
-          <p class="muted">Verify this fingerprint independently before trusting the key.</p>
-          <p class="mono">DA37 81CC FFE4 8F08 B6AF F5F9 640A 90CF 4215 36DE</p>
-        </section>
+  <div class="page-head">
+    <p class="eyebrow">Secure communications</p>
+    <h1>PGP <em>public key.</em></h1>
+    <p class="lede">
+      For sensitive topics, encrypted email is preferred. Verify the fingerprint out-of-band before sending anything confidential.
+    </p>
+  </div>
 
-        <section class="card full">
-          <span class="badge">How to verify locally</span>
-          <p class="muted">
-            Import the key and check the fingerprint matches what's listed above.
-            If the fingerprints don't match, do not use the key.
-          </p>
-          <p class="mono">gpg --show-keys --with-fingerprint dw-weant-publickey.asc</p>
-          <p class="muted" style="margin-top: 12px;">
-            Out-of-band verification is strongly preferred. If we've communicated before,
-            confirm the fingerprint over a separate channel.
-          </p>
-        </section>
-      </div>
-    </main>
+  <section class="content-section">
+    <div class="section-label">Fingerprint</div>
+    <h2>Verify <em>out-of-band.</em></h2>
+    <div class="fingerprint">DA37 81CC FFE4 8F08 B6AF &nbsp; F5F9 640A 90CF 4215 36DE</div>
+  </section>
 
-    <footer class="footer" role="contentinfo">
-      <div>© 2026 Douglas Robert Weant</div>
-      <div class="mono">
-        <a href="mailto:dweant@proton.me">dweant@proton.me</a>
-      </div>
-      <div class="mono" style="width:100%; margin-top:6px; font-size:11px;">
-        No tracking pixels. No forms. No funnels. Email is the clean channel.
-      </div>
-    </footer>
+  <section class="content-section">
+    <div class="section-label">Contact</div>
+    <h2>Secure <em>channels.</em></h2>
+    <p>Email: <a href="mailto:dweant@proton.me">dweant@proton.me</a></p>
+  </section>
+
+</div>
+
+<footer class="site-footer">
+  <span class="footer-note">© 2026 Douglas Robert Weant</span>
+  <div class="footer-links">
+    <a href="pgp.html" class="active">PGP</a>
+    <a href="mailto:dweant@proton.me">Email</a>
+  </div>
+</footer>
+
+</body>
+</html>
