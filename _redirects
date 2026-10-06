@@ -1,1 +1,8 @@
-IyBQcmV0dHkgVVJMcwovd29yayAgICAvd29yay5odG1sICAgIDIwMAovd3JpdGluZyAvd3JpdGluZy5odG1sIDIwMAovYWJvdXQgICAvYWJvdXQuaHRtbCAgIDIwMAovcGdwIC9wZ3AuaHRtbCAyMDAKL3RocmVhdGx1bWVuICAgIGh0dHBzOi8vdGhyZWF0bHVtZW4ub25yZW5kZXIuY29tICAgIDMwMgoKL3dndS1zaG93Y2FzZSAgICAvd2d1LXNob3djYXNlLmh0bWwgICAgMjAwCg==
+# Pretty URLs
+/work    /work.html    200
+/writing /writing.html 200
+/about   /about.html   200
+/pgp /pgp.html 200
+/threatlumen    https://threatlumen.onrender.com    302
+
+/wgu-showcase    /wgu-showcase.html    200
