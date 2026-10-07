@@ -1,12 +1,83 @@
 <!doctype html>
-<html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Field Notes | Douglas Weant</title><meta name="description" content="Field notes by Douglas Weant on resilient systems, responsible AI, cyber-physical operations, and human judgment under disruption."/><link rel="stylesheet" href="styles.css"/></head>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Field Notes | Douglas Weant</title>
+<meta name="description" content="Field notes by Douglas Weant on resilient systems, responsible AI, cyber-physical operations, and human judgment under disruption."/>
+<meta name="theme-color" content="#0a0e17"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0e17'/%3E%3Cg stroke='%2350fa7b' stroke-width='3'%3E%3Cline x1='18' y1='46' x2='32' y2='20'/%3E%3Cline x1='32' y1='20' x2='46' y2='46'/%3E%3Cline x1='18' y1='46' x2='46' y2='46'/%3E%3C/g%3E%3Cg fill='%2350fa7b'%3E%3Ccircle cx='18' cy='46' r='6'/%3E%3Ccircle cx='32' cy='20' r='6'/%3E%3Ccircle cx='46' cy='46' r='6'/%3E%3C/g%3E%3C/svg%3E"/>
+<meta property="og:title" content="Field Notes | Douglas Weant"/>
+<meta property="og:description" content="Field notes by Douglas Weant on resilient systems, responsible AI, cyber-physical operations, and human judgment under disruption."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://douglasweant.com/writing.html"/>
+<meta property="og:image" content="https://douglasweant.com/image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="stylesheet" href="styles.css"/>
+</head>
 <body>
-<nav class="site-nav"><div class="site-nav-inner"><a href="index.html" class="nav-brand">Douglas <span>Weant</span></a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="work.html">Work</a></li><li><a href="research.html">Research</a></li><li><a href="writing.html" class="active">Field Notes</a></li><li><a href="about.html">About</a></li></ul></div></nav>
+<canvas id="matrix" aria-hidden="true"></canvas>
+<nav class="site-nav" id="siteNav">
+  <div class="site-nav-inner">
+    <a href="index.html" class="nav-brand">douglas<em>_</em>weant<span class="cursor">▊</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="writing.html" class="active">Field Notes</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
+</nav>
 <main class="page-wrap">
-<div class="page-head"><p class="eyebrow">Field Notes · Resilience · Operations</p><h1>Thinking in public about systems, <em>limits, and responsibility.</em></h1><p class="lede">These notes clarify the questions behind my work: what fails, who is accountable, and what evidence is needed before technology earns trust.</p></div>
-<section class="content-section"><div class="section-label">Foundation Notes</div><h2>Starting with the questions that shape the work.</h2><div class="row-list"><article class="row-item"><div class="row-item-name">When Infrastructure Fails, What Still Needs to Work?</div><p>A resilience question for any organization: identify the small set of communications, decisions, and operational capabilities that must remain available when the normal stack is not.</p><span class="row-link">Coming Soon</span></article><article class="row-item"><div class="row-item-name">AI Is a Tool, Not the Mission</div><p>Why responsible use starts with a real task, a non-AI fallback, human authority, and evidence that the technology makes the task better.</p><span class="row-link">Coming Soon</span></article><article class="row-item"><div class="row-item-name">What Food Manufacturing Taught Me About Resilient Systems</div><p>Lessons from regulated physical-world operations, where safety, reliability, dependencies, and recovery cannot be treated as abstract concerns.</p><span class="row-link">Coming Soon</span></article></div></section>
-<section class="content-section"><div class="section-label">Editorial Standard</div><h2>Notes, not thought leadership.</h2><p>I will use this space for working ideas, research observations, field-test lessons, and corrections. The goal is not to announce certainty early; it is to make the reasoning and the limits visible as the work develops.</p></section>
-<section class="content-section"><div class="section-label">Topics</div><div class="tag-row"><span class="tag">Resilient Systems</span><span class="tag">Responsible AI</span><span class="tag">Cyber-Physical Security</span><span class="tag">Emergency Communications</span><span class="tag">Human Decision-Making</span></div></section>
+  <div class="page-head">
+    <p class="eyebrow">Field Notes · Resilience · Operations</p>
+    <h1>Thinking in public about systems, <em>limits, and responsibility.</em></h1>
+    <p class="lede">These notes clarify the questions behind my work: what fails, who is accountable, and what evidence is needed before technology earns trust.</p>
+  </div>
+  <section class="panel">
+    <div class="section-label">Foundation Notes</div>
+    <h2>Starting with the questions that shape the work.</h2>
+    <div class="row-list">
+      <article class="row-item">
+        <div class="row-item-name">When Infrastructure Fails, What Still Needs to Work?</div>
+        <p>A resilience question for any organization: identify the small set of communications, decisions, and operational capabilities that must remain available when the normal stack is not.</p>
+        <span class="row-link">Coming Soon</span>
+      </article>
+      <article class="row-item">
+        <div class="row-item-name">AI Is a Tool, Not the Mission</div>
+        <p>Why responsible use starts with a real task, a non-AI fallback, human authority, and evidence that the technology makes the task better.</p>
+        <span class="row-link">Coming Soon</span>
+      </article>
+      <article class="row-item">
+        <div class="row-item-name">What Food Manufacturing Taught Me About Resilient Systems</div>
+        <p>Lessons from regulated physical-world operations, where safety, reliability, dependencies, and recovery cannot be treated as abstract concerns.</p>
+        <span class="row-link">Coming Soon</span>
+      </article>
+    </div>
+  </section>
+  <section class="panel">
+    <div class="section-label">Editorial Standard</div>
+    <h2>Notes, not thought leadership.</h2>
+    <p>I will use this space for working ideas, research observations, field-test lessons, and corrections. The goal is not to announce certainty early; it is to make the reasoning and the limits visible as the work develops.</p>
+  </section>
+  <section class="panel">
+    <div class="section-label">Topics</div>
+    <h2>What the notes will cover.</h2>
+    <div class="tag-row">
+      <span class="tag">Resilient Systems</span>
+      <span class="tag">Responsible AI</span>
+      <span class="tag">Cyber-Physical Security</span>
+      <span class="tag">Emergency Communications</span>
+      <span class="tag">Human Decision-Making</span>
+    </div>
+  </section>
 </main>
-<footer class="site-footer"><span class="footer-note">© 2026 Douglas Robert Weant</span><div class="footer-links"><a href="pgp.html">PGP</a><a href="mailto:dweant@proton.me">Email</a></div></footer>
-</body></html>
+<footer class="site-footer">
+  <span>© 2026 Douglas Robert Weant</span>
+  <div class="footer-links"><a href="pgp.html">PGP</a><a href="mailto:dweant@proton.me">Email</a></div>
+</footer>
+<script src="site.js"></script>
+</body>
+</html>

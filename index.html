@@ -1,23 +1,86 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Douglas Weant | Resilient Systems & Applied R&D</title>
-  <meta name="description" content="Douglas Weant is a practitioner-researcher working across resilient systems, cyber-physical security, responsible AI, and human decision-making under disruption."/>
-  <link rel="stylesheet" href="styles.css"/>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Douglas Weant | Resilient Systems & Applied R&D</title>
+<meta name="description" content="Douglas Weant is a practitioner-researcher working across resilient systems, cyber-physical security, responsible AI, and human decision-making under disruption."/>
+<meta name="theme-color" content="#0a0e17"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0e17'/%3E%3Cg stroke='%2350fa7b' stroke-width='3'%3E%3Cline x1='18' y1='46' x2='32' y2='20'/%3E%3Cline x1='32' y1='20' x2='46' y2='46'/%3E%3Cline x1='18' y1='46' x2='46' y2='46'/%3E%3C/g%3E%3Cg fill='%2350fa7b'%3E%3Ccircle cx='18' cy='46' r='6'/%3E%3Ccircle cx='32' cy='20' r='6'/%3E%3Ccircle cx='46' cy='46' r='6'/%3E%3C/g%3E%3C/svg%3E"/>
+<meta property="og:title" content="Douglas Weant | Resilient Systems & Applied R&D"/>
+<meta property="og:description" content="Practitioner-researcher working across resilient systems, cyber-physical security, responsible AI, and human decision-making under disruption."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://douglasweant.com/"/>
+<meta property="og:image" content="https://douglasweant.com/image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Douglas Weant | Resilient Systems & Applied R&D"/>
+<meta name="twitter:description" content="Practitioner-researcher working across resilient systems, cyber-physical security, responsible AI, and human decision-making under disruption."/>
+<link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-<nav class="site-nav"><div class="site-nav-inner"><a href="index.html" class="nav-brand">Douglas <span>Weant</span></a><ul class="nav-links"><li><a href="index.html" class="active">Home</a></li><li><a href="work.html">Work</a></li><li><a href="research.html">Research</a></li><li><a href="writing.html">Field Notes</a></li><li><a href="about.html">About</a></li></ul></div></nav>
-<main class="page-wrap">
-  <div class="page-head hero-split">
-    <div class="hero-text"><p class="eyebrow">Douglas Robert Weant</p><h1>Building for the moments when systems are <em>most needed.</em></h1><p class="lede">I am a practitioner-researcher working at the intersection of resilient systems, cyber-physical security, responsible AI, and human decision-making under disruption.</p><div class="btn-row"><a class="btn" href="research.html">Explore the Research →</a></div></div>
-    <div class="hero-photo-wrap"><div class="hero-photo-rules" aria-hidden="true"></div><div class="hero-photo-frame"><img src="image.png" alt="Douglas Weant" class="hero-photo"/><div class="hero-photo-overlay"></div></div></div>
+<canvas id="matrix" aria-hidden="true"></canvas>
+<nav class="site-nav" id="siteNav">
+  <div class="site-nav-inner">
+    <a href="index.html" class="nav-brand">douglas<em>_</em>weant<span class="cursor">▊</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="research.html">Research</a></li>
+      <li><a href="writing.html">Field Notes</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
   </div>
-  <section class="content-section"><div class="section-label">The Operating Question</div><h2>What must still work when ordinary infrastructure cannot be assumed?</h2><p>I am interested in the capabilities communities and organizations need when networks are down, cloud services are unreachable, or the available information is incomplete. The work is practical: preserve communication, situational awareness, and accountable decision-making when conditions become difficult.</p></section>
-  <section class="content-section"><div class="section-label">The Perspective</div><h2>At the cyber-physical edge.</h2><p>My experience in security, law enforcement, and regulated manufacturing informs a systems view: digital failures have physical consequences, and technology is only useful if people can operate it under pressure. This is where security, continuity, communications, and human factors converge.</p></section>
-  <section class="content-section"><div class="section-label">The Laboratory</div><h2>WeanTech LLC.</h2><p>I founded WeanTech as an applied R&D company for resilient systems. Its first research program, Project MESH, asks whether a small team can establish secure local communications in 15 minutes or less without commercial Internet or cellular service. AI is a tool in that work—not the product, the premise, or the only path to a working capability. A second line of inquiry, Project ARENA, examines autonomous agents operating under adversarial conditions.</p><div class="btn-row"><a class="btn" href="research.html">Project MESH Research →</a></div></section>
+</nav>
+<main class="page-wrap">
+  <header class="hero">
+    <p class="eyebrow">Douglas Robert Weant</p>
+    <h1>Building for the moments when systems are <em>most needed.</em></h1>
+    <p class="lede">I am a practitioner-researcher working at the intersection of resilient systems, cyber-physical security, responsible AI, and human decision-making under disruption.</p>
+    <div class="btn-row">
+      <a class="btn" href="research.html">Explore the Research →</a>
+      <a class="btn ghost" href="about.html">About Douglas</a>
+    </div>
+    <div class="hero-meta">
+      <span><b>focus</b> &nbsp;resilient systems · cyber-physical security</span>
+      <span><b>lab</b> &nbsp;WeanTech LLC</span>
+      <span><b>status</b> &nbsp;<span style="color:var(--acc)">●</span> active research</span>
+    </div>
+  </header>
+  <section class="panel">
+    <div class="section-label">The Operating Question</div>
+    <h2>What must still work when ordinary infrastructure cannot be assumed?</h2>
+    <p>I am interested in the capabilities communities and organizations need when networks are down, cloud services are unreachable, or the available information is incomplete. The work is practical: preserve communication, situational awareness, and accountable decision-making when conditions become difficult.</p>
+  </section>
+  <section class="panel">
+    <div class="section-label">The Perspective</div>
+    <h2>At the cyber-physical edge.</h2>
+    <p>My experience in security, law enforcement, and regulated manufacturing informs a systems view: digital failures have physical consequences, and technology is only useful if people can operate it under pressure. This is where security, continuity, communications, and human factors converge.</p>
+    <div class="tag-row">
+      <span class="tag">Resilient Systems</span>
+      <span class="tag">Cyber-Physical Security</span>
+      <span class="tag">Responsible AI</span>
+      <span class="tag">Human Factors</span>
+    </div>
+  </section>
+  <section class="panel">
+    <div class="section-label">The Laboratory</div>
+    <h2>WeanTech LLC.</h2>
+    <p>I founded WeanTech as an applied R&D company for resilient systems. Its first research program, Project MESH, asks whether a small team can establish secure local communications in 15 minutes or less without commercial Internet or cellular service. AI is a tool in that work — not the product, the premise, or the only path to a working capability. A second line of inquiry, Project ARENA, examines autonomous agents operating under adversarial conditions.</p>
+    <div class="tag-row">
+      <span class="tag hot">Project MESH · active</span>
+      <span class="tag">Project ARENA · emerging</span>
+    </div>
+    <div class="btn-row">
+      <a class="btn" href="research.html">Project MESH Research →</a>
+      <a class="btn ghost" href="https://weantech.com">weantech.com ↗</a>
+    </div>
+  </section>
 </main>
-<footer class="site-footer"><span class="footer-note">© 2026 Douglas Robert Weant</span><div class="footer-links"><a href="pgp.html">PGP</a><a href="mailto:dweant@proton.me">Email</a></div></footer>
+<footer class="site-footer">
+  <span>© 2026 Douglas Robert Weant</span>
+  <div class="footer-links"><a href="pgp.html">PGP</a><a href="mailto:dweant@proton.me">Email</a></div>
+</footer>
+<script src="site.js"></script>
 </body>
 </html>

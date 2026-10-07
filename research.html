@@ -1,90 +1,88 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Research | Douglas Weant</title>
-    <meta name="description"
-        content="Research direction for Douglas Weant: resilient communications, cyber-physical security, responsible AI, and human-controlled decision support." />
-    <link rel="stylesheet" href="styles.css" />
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Research | Douglas Weant</title>
+<meta name="description" content="Research direction for Douglas Weant: resilient communications, cyber-physical security, responsible AI, and human-controlled decision support."/>
+<meta name="theme-color" content="#0a0e17"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%230a0e17'/%3E%3Cg stroke='%2350fa7b' stroke-width='3'%3E%3Cline x1='18' y1='46' x2='32' y2='20'/%3E%3Cline x1='32' y1='20' x2='46' y2='46'/%3E%3Cline x1='18' y1='46' x2='46' y2='46'/%3E%3C/g%3E%3Cg fill='%2350fa7b'%3E%3Ccircle cx='18' cy='46' r='6'/%3E%3Ccircle cx='32' cy='20' r='6'/%3E%3Ccircle cx='46' cy='46' r='6'/%3E%3C/g%3E%3C/svg%3E"/>
+<meta property="og:title" content="Research | Douglas Weant"/>
+<meta property="og:description" content="Research direction for Douglas Weant: resilient communications, cyber-physical security, responsible AI, and human-controlled decision support."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://douglasweant.com/research.html"/>
+<meta property="og:image" content="https://douglasweant.com/image.png"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<link rel="stylesheet" href="styles.css"/>
 </head>
 <body>
-    <nav class="site-nav">
-        <div class="site-nav-inner"><a href="index.html" class="nav-brand">Douglas <span>Weant</span></a>
-            <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="work.html">Work</a></li>
-                <li><a href="research.html" class="active">Research</a></li>
-                <li><a href="writing.html">Field Notes</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </div>
-    </nav>
-    <main class="page-wrap">
-        <div class="page-head">
-            <p class="eyebrow">Research Direction · Applied Systems</p>
-            <h1>Researching what remains useful <em>under disruption.</em></h1>
-            <p class="lede">My work explores the intersection of resilient communications, cyber-physical security,
-                responsible AI, and human decision-making in environments where conventional systems cannot be taken for
-                granted.</p>
-        </div>
-        <section class="content-section">
-            <div class="section-label">Academic Focus</div>
-            <h2>Forensic cyberpsychology, AI, and human judgment.</h2>
-            <p>I hold a BS and MS in Cybersecurity and Information Assurance and am completing an MS in Computer Science
-                with an AI/ML concentration. My research interests sit at the intersection of cybersecurity,
-                autonomous systems, human decision-making, and adversarial environments. I am considering doctoral study
-                in forensic cyberpsychology at Capitol Technology University to deepen that work.</p>
-            <p>I am especially interested in AI as constrained decision support: useful for organizing information,
-                surfacing patterns, or testing hypotheses while remaining auditable, bounded, and subordinate to human
-                authority.</p>
-        </section>
-        <section class="content-section">
-            <div class="section-label">Flagship Applied Research</div>
-            <h2>Project MESH</h2>
-            <p>Project MESH is an applied research demonstrator through <a href="https://weantech.com" target="_blank" rel="noopener" style="text-decoration: underline;">WeanTech LLC</a> asking whether minimally trained responders can establish a
-                secure, local communications network for a small incident area in 15 minutes or less without commercial
-                Internet or cellular service—and keep it useful as nodes join, move, or fail.</p>
-            <p>The initial objective is deliberately modest: integrate mature components into a secure, rapidly
-                deployable field kit; test its limits; document what worked and what failed. It is prototype research,
-                not a certified public-safety system.</p>
-        </section>
-        <section class="content-section">
-            <div class="section-label">Research Themes</div>
-            <div class="card-grid">
-                <div class="card">
-                    <h3>Resilient Operations</h3>
-                    <p>How can organizations retain useful capability when connectivity, cloud services, identity
-                        systems, or key vendors fail?</p>
-                </div>
-                <div class="card">
-                    <h3>Human-Controlled Decision Support</h3>
-                    <p>How can AI-assisted information help an operator under uncertainty without displacing
-                        accountability or judgment?</p>
-                </div>
-            </div>
-        </section>
-        <section class="content-section">
-            <div class="section-label">Emerging Research</div>
-            <h2>Project ARENA</h2>
-            <p>ARENA explores how autonomous AI agents behave when environments are dynamic, partially observable,
-                and actively respond to the agent’s behavior. The central question is whether an agent can maintain
-                situational awareness, pursue a long-horizon objective, adapt to an adversary, and recover from
-                failure.</p>
-            <p>The work begins in controlled environments rather than operational systems. The goal is reproducible
-                evaluation of perception, memory, planning, tool use, adaptation, and recovery—not a claim of
-                autonomous cybersecurity capability.</p>
-            <div class="tag-row">
-                <span class="tag">Autonomous Systems</span>
-                <span class="tag">Adversarial Environments</span>
-                <span class="tag">AI Evaluation</span>
-                <span class="tag">Human Oversight</span>
-            </div>
-        </section>
-    </main>
-    <footer class="site-footer"><span class="footer-note">© 2026 Douglas Robert Weant</span>
-        <div class="footer-links"><a href="pgp.html">PGP</a><a href="mailto:dweant@proton.me">Email</a></div>
-    </footer>
+<canvas id="matrix" aria-hidden="true"></canvas>
+<nav class="site-nav" id="siteNav">
+  <div class="site-nav-inner">
+    <a href="index.html" class="nav-brand">douglas<em>_</em>weant<span class="cursor">▊</span></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false"><span></span></button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="work.html">Work</a></li>
+      <li><a href="research.html" class="active">Research</a></li>
+      <li><a href="writing.html">Field Notes</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </div>
+</nav>
+<main class="page-wrap">
+  <div class="page-head">
+    <p class="eyebrow">Research Direction · Applied Systems</p>
+    <h1>Researching what remains useful <em>under disruption.</em></h1>
+    <p class="lede">My work explores the intersection of resilient communications, cyber-physical security, responsible AI, and human decision-making in environments where conventional systems cannot be taken for granted.</p>
+  </div>
+  <section class="panel">
+    <div class="section-label">Academic Focus</div>
+    <h2>Forensic cyberpsychology, AI, and human judgment.</h2>
+    <p>I hold a BS and MS in Cybersecurity and Information Assurance and am completing an MS in Computer Science with an AI/ML concentration. My research interests sit at the intersection of cybersecurity, autonomous systems, human decision-making, and adversarial environments. I am considering doctoral study in forensic cyberpsychology at Capitol Technology University to deepen that work.</p>
+    <p>I am especially interested in AI as constrained decision support: useful for organizing information, surfacing patterns, or testing hypotheses while remaining auditable, bounded, and subordinate to human authority.</p>
+  </section>
+  <section class="panel">
+    <div class="section-label">Flagship Applied Research</div>
+    <h2>Project MESH</h2>
+    <p>Project MESH is an applied research demonstrator through <a href="https://weantech.com">WeanTech LLC</a> asking whether minimally trained responders can establish a secure, local communications network for a small incident area in 15 minutes or less without commercial Internet or cellular service — and keep it useful as nodes join, move, or fail.</p>
+    <p>The initial objective is deliberately modest: integrate mature components into a secure, rapidly deployable field kit; test its limits; document what worked and what failed. It is prototype research, not a certified public-safety system.</p>
+    <div class="tag-row">
+      <span class="tag hot">Active prototype</span>
+      <span class="tag">15-minute deploy target</span>
+    </div>
+  </section>
+  <section class="panel">
+    <div class="section-label">Research Themes</div>
+    <h2>Two questions that organize the work.</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Resilient Operations</h3>
+        <p>How can organizations retain useful capability when connectivity, cloud services, identity systems, or key vendors fail?</p>
+      </div>
+      <div class="card">
+        <h3>Human-Controlled Decision Support</h3>
+        <p>How can AI-assisted information help an operator under uncertainty without displacing accountability or judgment?</p>
+      </div>
+    </div>
+  </section>
+  <section class="panel">
+    <div class="section-label">Emerging Research</div>
+    <h2>Project ARENA</h2>
+    <p>ARENA explores how autonomous AI agents behave when environments are dynamic, partially observable, and actively respond to the agent’s behavior. The central question is whether an agent can maintain situational awareness, pursue a long-horizon objective, adapt to an adversary, and recover from failure.</p>
+    <p>The work begins in controlled environments rather than operational systems. The goal is reproducible evaluation of perception, memory, planning, tool use, adaptation, and recovery — not a claim of autonomous cybersecurity capability.</p>
+    <div class="tag-row">
+      <span class="tag">Autonomous Systems</span>
+      <span class="tag">Adversarial Environments</span>
+      <span class="tag">AI Evaluation</span>
+      <span class="tag">Human Oversight</span>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <span>© 2026 Douglas Robert Weant</span>
+  <div class="footer-links"><a href="pgp.html">PGP</a><a href="mailto:dweant@proton.me">Email</a></div>
+</footer>
+<script src="site.js"></script>
 </body>
 </html>
-
