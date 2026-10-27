@@ -1,0 +1,17 @@
+.bl .nav{position:sticky;background:#0b0f12e6;border-bottom:1px solid #ffffff14}
+.bl-hero{position:relative;min-height:46vh;display:flex;align-items:flex-end;overflow:hidden}
+.bl-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 60%;filter:brightness(.36) saturate(.7)}
+.bl-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 20%,var(--bg))}
+.bl-in{position:relative;z-index:1;max-width:960px;margin:0 auto;width:100%;padding:6rem 1.5rem 2rem}.bl-hero h1{font-size:clamp(2.6rem,7vw,5rem)}
+.bl-wrap{max-width:960px;margin:0 auto;padding:1rem 1.5rem 3rem}
+.empty{border:1px dashed #ffffff33;padding:2rem;text-align:center;color:var(--mute)}.empty .lampw{display:flex;justify-content:center;margin-bottom:1rem}
+.posts{list-style:none;padding:0;display:grid;gap:1rem}
+.post-card a{display:block;border:1px solid #ffffff1f;background:#ffffff06;padding:1.2rem;text-decoration:none;color:var(--ink)}.post-card a:hover{border-color:#6fc2c766}
+.post-card h2{font-size:1.5rem;margin:.3rem 0}.post-card p{color:#cfd6d8;margin:.3rem 0}
+.pmeta{display:flex;flex-wrap:wrap;gap:.4rem 1rem;font:500 .8rem var(--cond);letter-spacing:.14em;text-transform:uppercase;color:var(--mute)}
+.ptags{display:flex;flex-wrap:wrap;gap:.3rem;list-style:none;padding:0;margin:.8rem 0}.ptags li{font-size:.75rem;padding:.12rem .5rem;border:1px solid #ffffff26}
+.tpl-banner{position:sticky;top:0;z-index:60;background:repeating-linear-gradient(45deg,#e08a4a 0 14px,#c9742f 14px 28px);color:#120a04;text-align:center;font:700 .95rem var(--cond);letter-spacing:.18em;text-transform:uppercase;padding:.55rem 1rem}
+.post{max-width:720px;margin:0 auto;padding:2rem 1.5rem 3rem}.post h1{font-size:clamp(2.2rem,6vw,3.8rem)}
+.post p{margin:1rem 0}.post blockquote{margin:2rem 0;padding:.6rem 0 .6rem 1.2rem;border-left:3px solid var(--dusk);font:500 1.5rem/1.35 var(--cond);letter-spacing:.03em;text-transform:uppercase;color:var(--ink)}
+.post pre{background:#05090a;border:1px solid #6fc2c744;padding:1rem;overflow:auto;font:14px/1.5 ui-monospace,monospace;color:#bfeee0}
+.post h2{font-size:1.6rem;margin-top:2.2rem}

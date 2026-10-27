@@ -1,5 +1,5 @@
-# Pretty URLs
-/about   /about.html   200
-/pgp /pgp.html 200
-
-/wgu-showcase    /wgu-showcase.html    200
+/wgu-showcase.html  /wgu-showcase/  301
+/about.html  /#about  301
+/pgp.html  /#pgp  301
+/about  /#about  301
+/pgp  /#pgp  301

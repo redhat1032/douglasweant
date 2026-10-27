@@ -1,10 +1,130 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Douglas Weant — A working notebook</title><meta name="description" content="Douglas Weant's working notebook: systems, security, technology, food history, and questions worth exploring.">
-<link rel="stylesheet" href="notebook.css"></head><body>
-<a class="skip" href="#main">Skip to content</a><header><div class="wrap"><a class="brand" href="#top"><span>DW</span> DOUGLAS WEANT</a><nav aria-label="Main navigation"><a href="#notes">Notebook</a><a href="#exploring">Explorations</a><a href="#about">About</a><a href="#contact">Contact</a></nav></div></header>
-<main id="main" tabindex="-1"><div class="wrap"><div class="hero" id="top"><div><div class="eyebrow">A personal site / Always in progress</div><h1>I wonder what happens if…</h1><p class="intro">I like understanding how things work. Especially when someone says they can't.</p><p>I explore technology, systems, security, artificial intelligence, and whatever else catches my curiosity. Sometimes I build things. Sometimes I write about them. Often, one question leads to five more.</p><div class="actions"><a class="button" href="#about">A little about me</a><a href="#exploring">What I'm exploring →</a></div></div><aside class="hand"><small>Margin note no. 01</small>Understand the system.<br>Question the assumptions.<br>Try something.<br>See what happens.</aside></div>
-<section id="notes"><div class="section-top"><div><div class="eyebrow">01 / The notebook</div><h2>Thinking out loud.</h2></div><p>Ideas don't need to be finished to be worth exploring.</p></div><div class="grid"><article class="sheet"><div class="tag">A place for questions</div><h3>What am I missing?</h3><p>Notes on assumptions, unexpected results, and the questions that come next.</p><p><em>Entries coming when there's something worth sharing.</em></p></article><article class="sheet"><div class="tag">Learning in public</div><h3>Building to understand</h3><p>Sometimes the best way to learn a system is to try recreating a small piece of it.</p><p><em>Work in progress.</em></p></article><article class="sheet"><div class="tag">Beyond the keyboard</div><h3>Other rabbit holes</h3><p>Food history, fiction, games, people, and the systems connecting them.</p><p><em>More to come.</em></p></article></div></section>
-<section id="exploring"><div class="eyebrow">02 / Current explorations</div><h2>On the workbench.</h2><div class="two"><div><div class="rule"><div class="tag">Learning / Current focus</div><h3>Machine learning and cloud systems</h3><p>Finishing an M.S. in Computer Science with an AI/ML concentration, and investigating how to make complex tools easier to understand through hands-on experimentation.</p></div><div class="rule"><div class="tag">An enduring question</div><h3>What makes a system resilient?</h3><p>Reliability, security, human judgment, and the messy realities that don't fit neatly into a diagram.</p></div><div class="rule"><div class="tag">Another direction entirely</div><h3>Food, history, and interconnected worlds</h3><p>How ingredients, trade, knowledge, and culture shape one another across time.</p></div></div><aside class="aside"><div class="eyebrow">A note on projects</div><h3>Not everything becomes a product.</h3><p>Some ideas turn into tools. Others become sketches, lessons, or better questions. I'm interested in all of those outcomes.</p></aside></div></section>
-<section id="about"><div class="eyebrow">03 / About</div><h2>A few things about me.</h2><div class="two"><div><p>I'm Douglas Weant. My background includes food-manufacturing R&amp;D, where real-world constraints have a way of testing every elegant theory.</p><p>Earlier chapters included service as a Navy Signalman and Master-at-Arms, and in Air Force Reserve Security Forces as CATM NCOIC. I've since completed undergraduate and graduate study in cybersecurity and am finishing graduate work in computer science.</p><p>Those experiences left me interested in how technology, people, and decisions interact—especially when things don't go according to plan.</p></div><div><p>Outside of work, my curiosity wanders. Post-apocalyptic fiction, gaming, coffee, and the history of food all have a way of leading back to questions about adaptation, cooperation, and the systems we depend on.</p><p>This website isn't a pitch deck. It's a place to collect the things I'm learning and the questions I haven't answered yet.</p><p><a href="/about">More of the story →</a> · <a href="/wgu-showcase">Academic showcase →</a></p></div></div></section>
-<section id="contact"><div class="eyebrow">04 / Say hello</div><h2>Good questions make good conversations.</h2><p>Have a thought, a correction, or something interesting to compare notes on?</p><div class="links"><a class="button" href="mailto:dweant@proton.me">Send me a note ↗</a><a href="/pgp">PGP key →</a><a href="https://github.com/redhat1032">GitHub →</a></div></section></div></main><footer class="footer"><div class="wrap"><span>© 2026 Douglas Weant</span><span>Made with curiosity. Still being revised.</span></div></footer></body></html>
+<title>Douglas Weant</title>
+<meta name="description" content="Notes on technology, systems, security, AI, and food history from Douglas Weant.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="styles.css">
+<script src="main.js" defer></script></head>
+<body class="nojs">
+<div class="grain" aria-hidden="true"></div><div class="worlds" aria-hidden="true"><i class="w1"></i><i class="w2"></i><i class="w3"></i></div>
+<a class="skip" href="#main">Skip to content</a>
+<header class="nav"><a class="brand" href="./"><span class="lamp" aria-hidden="true"></span>Douglas Weant</a>
+<nav aria-label="Primary"><a href="#notebook">Notebook</a><a href="#about">About</a><a href="wgu-showcase/">Showcase</a><a href="#pgp">PGP</a><a href="#contact">Contact</a><button type="button" class="con-btn" id="conBtn" hidden aria-haspopup="dialog">Console <kbd>`</kbd></button><a href="blog/">Blog <small>· soon</small></a></nav></header>
+<main id="main">
+<section class="panels" aria-label="Three identities">
+ <div class="sweep" aria-hidden="true"></div><div class="fog f1" aria-hidden="true"></div><div class="fog f2" aria-hidden="true"></div>
+ <article class="panel" id="watchstander">
+  <img src="assets/watchstander.jpg" alt="A sailor seen from behind on a destroyer's signal bridge at dusk, binoculars raised beside a signal lamp." width="768" height="1024">
+  <div class="cap"><p class="kicker">01 · Navy Signalman</p><h2>The Watchstander</h2><p class="tag">See further. Think deeper. Act sooner.</p>
+  <ul class="words"><li>Discipline</li><li>Awareness</li><li>Decision</li><li>Advantage</li></ul><p class="foot">Same ocean. New threats. Higher stakes.</p></div></article>
+ <article class="panel" id="builder">
+  <img src="assets/builder-scholar.jpg" alt="A person seen from behind at a dark desk lit by a lamp, code on several monitors, shelves of books behind." width="768" height="1024">
+  <div class="cap"><p class="kicker">02 · Cybersecurity &amp; AI</p><h2>The Builder-Scholar</h2><p class="tag">Defend. Automate. Build. Improve.</p>
+  <ul class="words"><li>Cybersecurity</li><li>AI</li><li>Strategy</li><li>Naval History</li></ul><p class="foot">Technology today. Strategy tomorrow.</p></div></article>
+ <article class="panel" id="viking">
+  <img src="assets/modern-viking.jpg" alt="A hiker with a pack seated on a rock, seen from behind, looking down a misty fjord at dusk." width="768" height="1024">
+  <svg class="sketch" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="60"/><circle cx="100" cy="100" r="44"/><path d="M100 30v140M30 100h140M100 46l8 54-8 54-8-54z"/></svg>
+  <div class="cap"><p class="kicker">03 · Food R&amp;D → Cyber risk</p><h2>The Modern Viking</h2><p class="tag">Old principles. New battlefields.</p>
+  <ul class="words"><li>Endurance</li><li>Craft</li><li>Navigation</li><li>Resolve</li></ul><p class="foot">Different era. Same game.</p></div></article>
+</section>
+
+<section class="intro"><p class="kicker">A personal site / Always in progress</p>
+<h1>Security, systems, and human judgment.</h1>
+<p class="lede">I wonder what happens if…</p>
+<p>I like understanding how things work. Especially when someone says they can't.</p>
+<p>I explore technology, systems, security, artificial intelligence, and whatever else catches my curiosity. Sometimes I build things. Sometimes I write about them. Often, one question leads to five more.</p>
+<p class="margin"><span class="kicker">Margin note no. 01</span> Understand the system. Question the assumptions. Try something. See what happens.</p>
+<p class="ctas"><a href="#about">A little about me</a> · <a href="#learning">What I'm exploring →</a></p></section>
+
+<section class="course" aria-labelledby="cl"><p class="kicker">Plotted course</p><h2 id="cl" class="vh">Plotted course: Navy to food R&amp;D to cybersecurity to computer science</h2>
+<svg class="plot" viewBox="0 0 1000 260" role="img" aria-labelledby="cl">
+<g class="grid"><path d="M0 65H1000M0 130H1000M0 195H1000M125 0V260M250 0V260M375 0V260M500 0V260M625 0V260M750 0V260M875 0V260"/></g>
+<path class="track" pathLength="1" d="M60 200 C180 200 200 70 320 80 S480 210 600 170 S800 40 940 70"/>
+<g class="wp"><circle cx="60" cy="200" r="7"/><circle cx="320" cy="80" r="7"/><circle cx="600" cy="170" r="7"/><circle cx="940" cy="70" r="7"/></g>
+<g class="lbl"><text x="40" y="235" text-anchor="start">01 · NAVY SIGNALMAN</text><text x="320" y="50">02 · FOOD-MANUFACTURING R&amp;D</text><text x="600" y="215">03 · CYBERSECURITY</text><text x="940" y="40" text-anchor="end">04 · COMPUTER SCIENCE</text></g>
+</svg>
+<ol class="plot-list"><li><a href="#service">Navy Signalman and Master-at-Arms; Air Force Reserve Security Forces</a></li><li><a href="#physical">Food-manufacturing R&amp;D</a></li><li><a href="#learning">B.S. and M.S. in Cybersecurity and Information Assurance</a></li><li><a href="#learning">M.S. Computer Science, AI/ML — in progress</a></li></ol></section>
+<section class="row" data-world="1" id="service" aria-labelledby="s1"><div class="num">01</div><div><p class="kicker">The Watchstander / Service</p><h2 id="s1">Communication. Responsibility. Judgment.</h2>
+<p>I served in the Navy as a Signalman and Master-at-Arms, then in Air Force Reserve Security Forces. In the Reserves, I was the NCOIC (Noncommissioned Officer in Charge) of Combat Arms Training and Maintenance (CATM) for the 932nd Air Wing and then the 375th Air Wing.</p>
+<p>Those roles put communication, security, training, and human judgment into practical terms. A procedure has to make sense to the person using it. A message has to reach the person who needs it. Decisions have consequences beyond the page.</p>
+<figure class="signal"><div class="biglamp" id="bigLamp" role="img" aria-label="Signal lamp flashing WATCH in International Morse code"></div><figcaption><span class="kicker">Flashing light</span><span class="morse" id="morseTxt">W A T C H · <code>.-- .- - -.-. ....</code></span></figcaption></figure>
+<p class="sub">Same ocean. New threats. Higher stakes.</p></div></section>
+
+<section class="row" data-world="2" id="learning" aria-labelledby="s2"><div class="num">02</div><div><p class="kicker">The Builder-Scholar / Still learning</p><h2 id="s2">One question leads to another.</h2>
+<p>I completed a B.S. and M.S. in Cybersecurity and Information Assurance at Western Governors University and am finishing an M.S. in Computer Science with a concentration in artificial intelligence and machine learning.</p>
+<p>I'm considering pursuing a PhD. My research interests include human decision-making, AI-assisted judgment, adversarial environments, and how people and systems behave under stress.</p>
+<h3>On the workbench.</h3>
+<div class="cards">
+<div><p class="kicker">Learning / Current focus</p><h4>Machine learning and cloud systems</h4><p>Finishing an M.S. in Computer Science with an AI/ML concentration, and investigating how to make complex tools easier to understand through hands-on experimentation.</p></div>
+<div><p class="kicker">An enduring question</p><h4>What makes a system resilient?</h4><p>Reliability, security, human judgment, and the messy realities that don't fit neatly into a diagram.</p></div>
+<div><p class="kicker">A note on projects</p><h4>Not everything becomes a product.</h4><p>Some ideas turn into tools. Others become sketches, lessons, or better questions. I'm interested in all of those outcomes.</p></div></div>
+<h3>Public projects</h3>
+<div class="proj"><a href="https://github.com/redhat1032/ransomware-triage"><b>ransomtriage</b><span>Offline, privacy-preserving first-hour ransomware triage: identify the family, extract IOCs, find free decryptors. Nothing is uploaded.</span><span class="lk">GitHub →</span></a>
+<a href="https://github.com/redhat1032/kevbrief"><b>kevbrief</b><span class="lk">GitHub →</span></a></div>
+<p class="small">ransomtriage is also on <a href="https://pypi.org/project/ransomtriage/">PyPI</a>.</p>
+<h3 id="showcase">WGU Academic Showcase</h3>
+<p>Douglas R. Weant — thirty-six courses across three WGU degrees</p>
+<ul class="stats"><li><b>36</b> Courses</li><li><b>3</b> Degrees</li><li><b>9</b> Certification-aligned</li><li><b>75</b> Deliverables</li></ul>
+<ul class="list"><li>B.S. Cybersecurity &amp; IA — 2024</li><li>M.S. Cybersecurity &amp; IA — 2025</li><li>M.S. Computer Science, AI/ML — in progress</li></ul>
+<h4>Certifications</h4>
+<ul class="certs"><li>CompTIA A+ ce</li><li>CompTIA Network+ ce</li><li>CompTIA Security+ ce</li><li>CompTIA CySA+ ce</li><li>CompTIA PenTest+</li><li>CompTIA Project+</li><li>ITIL 4 Foundation (PeopleCert)</li><li>CompTIA stackables CNVP · CNSP · CSAP · CIOS · CSIS</li><li class="prog">AWS Certified Machine Learning Engineer – Associate (in progress, D801)</li></ul>
+<p class="small">About this showcase. Each entry presents the course, an original project abstract, the topics and skills demonstrated, and the types of deliverables produced — never the complete coursework or assessment answers, in keeping with WGU's academic integrity standards. Fictional organization names (TechFite, CyberForge, Zip Products Inc., Fielder Medical Center, and others) are WGU case-study entities, not real employers or clients.</p>
+<p><a href="wgu-showcase/">Explore the academic showcase →</a></p>
+<p class="sub">Technology today. Strategy tomorrow. Past lessons. Modern tools. Real impact.</p></div></section>
+
+<section class="row" data-world="3" id="physical" aria-labelledby="s3"><div class="num">03</div><div><p class="kicker">The Modern Viking / The physical world</p><h2 id="s3">Where theory meets the production floor.</h2>
+<p>I lead cross-functional work across R&amp;D, operations, and supply chain in large-scale food manufacturing. Safety, reliability, regulatory requirements, and operational constraints are part of the same problem.</p>
+<p>That work shapes how I approach technical systems, too. Start with the operating environment. Understand what depends on what. Ask what happens when something goes wrong, and whether people can still do what they need to do.</p>
+<p class="sub">Old principles. New battlefields. Different era. Same game.</p>
+<h3>Other rabbit holes.</h3>
+<p>Some interests start far from a keyboard and lead right back to questions about people, adaptation, and the systems we depend on.</p>
+<div class="cards">
+<div><h4>Post-apocalyptic fiction</h4><p>I'm interested in what survives when infrastructure fails: trust, values, cooperation, and the work of rebuilding.</p></div>
+<div><h4>Gaming</h4><p>World of Warcraft is a hobby, and a reminder of how much coordination, shared context, and recovery after a bad decision matter.</p></div>
+<div><h4>Coffee</h4><p>A constant companion for reading, technical work, and conversations that need a little time.</p></div>
+<div><h4>Food history</h4><p>I explore the history of food: how ingredients, cooking traditions, trade, and culture move across places and generations, shaping how people eat and live.</p></div>
+<div><p class="kicker">Another direction entirely</p><h4>Food, history, and interconnected worlds</h4><p>How ingredients, trade, knowledge, and culture shape one another across time.</p></div></div></div></section>
+
+<section class="row" id="about" aria-labelledby="s4"><div class="num">04</div><div><p class="kicker">About</p><h2 id="s4">A few things about me.</h2>
+<p class="margin">Understand the system. Question the assumptions. Keep learning.</p>
+<p class="lede2">Different chapters. The same curiosity.</p>
+<p>I'm Douglas Weant. I like understanding how things work: the technology, the people, and everything that happens when the plan meets reality.</p>
+<p>My path runs through military service, food-manufacturing R&amp;D—where real-world constraints have a way of testing every elegant theory—cybersecurity, and computer science. The setting changes. There is always another question to follow.</p>
+<p>Earlier chapters included service as a Navy Signalman and Master-at-Arms, and in Air Force Reserve Security Forces as CATM NCOIC. I've since completed undergraduate and graduate study in cybersecurity and am finishing graduate work in computer science.</p>
+<p>Those experiences left me interested in how technology, people, and decisions interact—especially when things don't go according to plan.</p>
+<p>Outside of work, my curiosity wanders. Post-apocalyptic fiction, gaming, coffee, and the history of food all have a way of leading back to questions about adaptation, cooperation, and the systems we depend on.</p>
+<p>This website isn't a pitch deck. It's a place to collect the things I'm learning and the questions I haven't answered yet.</p>
+<p><a href="#about">More of the story →</a> · <a href="wgu-showcase/">Academic showcase →</a></p></div></section>
+
+<section class="row" id="notebook" aria-labelledby="s5"><div class="num">05</div><div><p class="kicker">The notebook</p><h2 id="s5">Thinking out loud.</h2>
+<p>Ideas don't need to be finished to be worth exploring.</p>
+<div class="cards">
+<div><p class="kicker">A place for questions</p><h4>What am I missing?</h4><p>Notes on assumptions, unexpected results, and the questions that come next.</p><p class="small">Entries coming when there's something worth sharing.</p></div>
+<div><p class="kicker">Learning in public</p><h4>Building to understand</h4><p>Sometimes the best way to learn a system is to try recreating a small piece of it.</p><p class="small">Work in progress.</p></div>
+<div><p class="kicker">Beyond the keyboard</p><h4>Other rabbit holes</h4><p>Food history, fiction, games, people, and the systems connecting them.</p><p class="small">More to come.</p></div></div>
+</div></section>
+
+<section class="row blog-teaser" id="blog" aria-labelledby="sb"><div class="num">06</div><div><p class="kicker">The blog / Field notes</p><h2 id="sb">Notes from the workbench.</h2>
+<p><strong>Coming soon.</strong> Entries coming when there's something worth sharing.</p></div></section>
+<section class="row contact" id="contact" aria-labelledby="s6"><div class="num">07</div><div><p class="kicker">Say hello / Compare notes</p><h2 id="s6">Good questions make good conversations.</h2>
+<p class="lede2">Have a question worth following?</p>
+<p>Have a thought, a correction, or something interesting to compare notes on? Send me a note.</p>
+<h3>Start a conversation.</h3>
+<p>Email is the easiest way to reach me.</p>
+<p><a class="big" href="mailto:dweant@proton.me">dweant@proton.me</a></p>
+<p><a href="mailto:dweant@proton.me">Send me a note ↗</a> · <a href="#pgp">PGP key →</a></p>
+<h3>A little more privacy.</h3>
+<p>For sensitive topics, I prefer PGP-encrypted email. Download my public key to use with your email software.</p>
+<p><a href="https://douglasweant.com/assets/dw-weant-publickey.asc" download="douglas-weant-public-key.asc">Download public key ↓</a> · <a href="#pgp">View key →</a> · <a href="https://github.com/redhat1032">GitHub →</a></p>
+<p class="small">OpenPGP public key · ASCII-armored .asc file</p>
+<h3>Check the fingerprint.</h3>
+<div class="cipher" id="pgp" role="group" aria-label="PGP fingerprint"><div class="hoist" aria-hidden="true"><i></i><i></i><i></i><i></i></div><p class="fp">DA37 81CC FFE4 8F08 B6AF F5F9 640A 90CF 4215 36DE</p><div class="tiles" aria-hidden="true"><span class="t" style="--h:63">DA37</span><span class="t" style="--h:108">81CC</span><span class="t" style="--h:348">FFE4</span><span class="t" style="--h:256">8F08</span><span class="t" style="--h:327">B6AF</span><span class="t" style="--h:329">F5F9</span><span class="t" style="--h:50">640A</span><span class="t" style="--h:351">90CF</span><span class="t" style="--h:357">4215</span><span class="t" style="--h:6">36DE</span></div><p class="small">Cipher card · 160-bit OpenPGP fingerprint</p></div>
+<p>Before sending anything confidential, confirm this fingerprint with me through a separate, trusted channel.</p>
+<p class="margin"><span class="kicker">A note in the margin</span> There is always another question.</p>
+<p>Technology, security, food history, or an unexpected connection between them—I'm interested in where a good conversation might lead.</p></div></section>
+</main>
+<dialog class="console" id="console" aria-labelledby="conT"><div class="con-head"><span id="conT">CIC console · facts only</span><button type="button" id="conX" aria-label="Close console">Esc ×</button></div>
+<div class="con-out" id="conOut" role="log" aria-live="polite"></div>
+<form id="conF" class="con-in"><label for="conI">&gt;</label><input id="conI" autocomplete="off" spellcheck="false" aria-describedby="conHelp"><span id="conHelp" class="vh">Type help and press Enter.</span></form></dialog>
+<footer><p>© 2026 Douglas Weant</p><p>Made with curiosity. Still being revised.</p></footer>
+</body></html>
