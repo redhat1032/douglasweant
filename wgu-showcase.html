@@ -14,121 +14,54 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="WGU Academic Showcase | Douglas R. Weant">
 <meta name="twitter:description" content="Thirty-six courses across three WGU degrees in cybersecurity and AI/ML: project abstracts, skills, and deliverables.">
+<meta name="theme-color" content="#f5f0e6">
+<link rel="stylesheet" href="notebook.css">
 <style>
-:root{
-  --bg:#0a0e17; --panel:#111827; --panel2:#0d1321;
-  --border:#1f2937; --border2:#374151;
-  --t1:#f3f4f6; --t2:#9ca3af; --t3:#6b7280;
-  --bs:#388bfd; --ms:#ff79c6; --ml:#50fa7b; --warn:#f1fa8c;
-}
-*{box-sizing:border-box}
-body{background:var(--bg);color:var(--t1);
-  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  margin:0;padding:32px 16px 64px;line-height:1.6}
-.wrap{max-width:1250px;margin:0 auto}
-.back{margin-bottom:14px}
-.back a{font-size:13px;color:var(--t3);text-decoration:none}
-.back a:hover{color:var(--t1)}
-header{border-bottom:2px dashed var(--border);padding-bottom:24px;margin-bottom:8px}
-header h1{font-size:32px;font-weight:700;margin:0 0 6px;letter-spacing:-.5px}
-header .sub{color:var(--t2);font-size:15px;margin:0 0 4px}
-header .sub strong{color:var(--t1)}
-.degree-tags{display:flex;flex-wrap:wrap;gap:12px;margin-top:14px}
-.tag{font-size:12px;font-weight:600;padding:4px 10px;border-radius:4px;text-transform:uppercase;letter-spacing:.5px}
-.tag.bs{background:rgba(56,139,253,.15);color:var(--bs);border:1px solid rgba(56,139,253,.3)}
-.tag.ms{background:rgba(255,121,198,.15);color:var(--ms);border:1px solid rgba(255,121,198,.3)}
-.tag.ml{background:rgba(80,250,123,.15);color:var(--ml);border:1px solid rgba(80,250,123,.3)}
-.stats{display:flex;flex-wrap:wrap;gap:28px;margin:22px 0 6px}
-.stat .n{font-size:26px;font-weight:700;color:var(--t1)}
-.stat .l{font-size:12px;color:var(--t3);text-transform:uppercase;letter-spacing:1px}
-.certs{background:var(--panel);border:1px solid var(--border);border-radius:8px;
-  padding:16px 20px;margin:20px 0 8px;display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center}
-.certs .lbl{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--t3);margin-right:6px}
-.cert{font-size:14px;color:var(--t1)}
-.cert small{color:var(--t3)}
-.cert .ok{color:var(--ml);font-weight:600}
-.cert .wip{color:var(--warn);font-weight:600}
-.toolbar{position:sticky;top:0;z-index:50;background:rgba(10,14,23,.96);backdrop-filter:blur(6px);
-  padding:14px 0;border-bottom:1px solid var(--border);margin:18px 0 8px;
-  display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-.pill{font-size:13px;font-weight:600;padding:6px 14px;border-radius:20px;cursor:pointer;
-  background:transparent;color:var(--t2);border:1px solid var(--border2)}
-.pill:hover{color:var(--t1);border-color:var(--t3)}
-.pill.on{background:var(--t1);color:#0a0e17;border-color:var(--t1)}
-.search{margin-left:auto;display:flex;align-items:center;gap:8px}
-.search input{background:var(--panel);border:1px solid var(--border2);color:var(--t1);
-  border-radius:6px;padding:8px 12px;font-size:14px;width:240px;outline:none}
-.search input:focus{border-color:var(--bs)}
-.search input::placeholder{color:var(--t3)}
-.count-note{font-size:13px;color:var(--t3);width:100%}
-h2.sec{font-size:20px;font-weight:600;margin:36px 0 4px;padding-bottom:8px;
-  border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px}
-h2.sec .cnt{font-size:12px;color:var(--t3);font-weight:500}
-.sec-sub{font-size:13px;color:var(--t3);margin:0 0 18px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:18px}
-.card{background:var(--panel);border:1px solid var(--border);border-radius:8px;padding:20px;
-  display:flex;flex-direction:column;cursor:pointer;transition:border-color .15s,transform .15s}
-.card:hover{border-color:var(--border2);transform:translateY(-2px)}
-.card-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
-.code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:13px;font-weight:700;
-  color:var(--t1);background:var(--panel2);border:1px solid var(--border);padding:2px 8px;border-radius:4px}
-.dtag{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;padding:3px 8px;border-radius:4px}
-.dtag.bs{background:rgba(56,139,253,.12);color:var(--bs)}
-.dtag.ms{background:rgba(255,121,198,.12);color:var(--ms)}
-.dtag.ml{background:rgba(80,250,123,.12);color:var(--ml)}
-.badge-exam{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;
-  color:var(--warn);border:1px solid rgba(241,250,140,.35);background:rgba(241,250,140,.07);
-  padding:3px 8px;border-radius:4px;margin-left:6px}
-.badge-wip{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.8px;
-  color:#0a0e17;background:var(--warn);padding:3px 8px;border-radius:4px;margin-left:6px}
-.card h3{font-size:16px;margin:0 0 8px;font-weight:600;line-height:1.35}
-.card .abs{font-size:13.5px;color:var(--t2);margin:0 0 12px;flex:1;
-  display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
-.skills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
-.sk{font-size:11px;color:var(--t2);background:rgba(156,163,175,.08);
-  border:1px solid var(--border);padding:2px 8px;border-radius:12px}
-.card-foot{display:flex;align-items:center;justify-content:space-between;
-  border-top:1px solid var(--border);padding-top:10px;font-size:12px;color:var(--t3)}
-.card-foot .more{color:var(--bs);font-weight:600}
-.empty{color:var(--t3);font-size:14px;padding:40px 0;text-align:center;display:none}
-.noscript{color:var(--t2);font-size:15px;padding:24px 0}
-.noscript a{color:var(--bs)}
-/* modal */
-.overlay{position:fixed;inset:0;background:rgba(4,6,10,.78);z-index:100;display:none;
-  align-items:flex-start;justify-content:center;padding:48px 16px;overflow-y:auto}
-.overlay.open{display:flex}
-.modal{background:var(--panel);border:1px solid var(--border2);border-radius:10px;
-  max-width:760px;width:100%;padding:28px;position:relative}
-.modal .x{position:absolute;top:14px;right:16px;background:none;border:none;color:var(--t3);
-  font-size:22px;cursor:pointer;line-height:1}
-.modal .x:hover{color:var(--t1)}
-.modal h2{font-size:22px;margin:6px 0 4px;letter-spacing:-.3px}
-.modal .meta{font-size:13px;color:var(--t3);margin-bottom:14px}
-.modal .abs-full{font-size:15px;color:var(--t1);margin:0 0 18px}
-.modal h4{font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--t3);margin:20px 0 8px}
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{font-size:13px;color:var(--t1);background:var(--panel2);border:1px solid var(--border);
-  padding:4px 12px;border-radius:14px}
-.dlist{margin:0;padding:0;list-style:none}
-.dlist li{font-size:14px;color:var(--t2);padding:8px 0;border-bottom:1px solid var(--border);
-  display:flex;gap:10px}
-.dlist li:last-child{border-bottom:none}
-.dlist .dt{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--t3);
-  min-width:86px;padding-top:2px}
-.mtable{width:100%;border-collapse:collapse;font-size:14px}
-.mtable th,.mtable td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--border)}
-.mtable th{color:var(--t3);font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:.6px}
-.mtable td strong{color:var(--ml)}
-footer{margin-top:56px;border-top:2px dashed var(--border);padding-top:20px;
-  font-size:13px;color:var(--t3);max-width:1250px}
-footer strong{color:var(--t2)}
-@media(max-width:640px){.search{margin-left:0;width:100%}.search input{width:100%}}
+.showcase-hero{padding:70px 0 35px;border-bottom:1px solid var(--line)}
+.showcase-hero h1{font-size:clamp(2.8rem,6vw,5rem);max-width:850px;margin:18px 0 24px}
+.sub{color:var(--muted);max-width:720px}.degree-tags,.stats,.certs,.toolbar,.skills,.chips{display:flex;flex-wrap:wrap;gap:12px}
+.degree-tags{margin-top:25px}.degree-tags .tag{border:1px solid var(--line);padding:7px 10px;letter-spacing:.04em}
+.stats{gap:24px 45px;margin:32px 0}.stat .n{font-size:2rem;line-height:1.2}.stat .l,.certs .lbl{font:11px system-ui,sans-serif;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.certs{background:#e8e5d9;padding:24px;margin:28px 0;gap:12px 24px;align-items:baseline}
+.certs .lbl{width:100%}.cert{font:14px/1.6 system-ui,sans-serif}.cert small{color:var(--muted)}.ok{color:var(--accent)}.wip{color:#815823}
+.toolbar{padding:24px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);align-items:center}
+.pill,.details{font:14px/1.5 system-ui,sans-serif;cursor:pointer;border:1px solid var(--line);padding:9px 13px;background:#fcfaf4;color:var(--ink);border-radius:2px}
+.pill:hover,.details:hover{border-color:var(--accent)}.pill.on{background:var(--accent);border-color:var(--accent);color:#fff}
+button:focus-visible,input:focus-visible{outline:3px solid #bd7b31;outline-offset:3px}
+.search{flex:1 1 260px}.search input{font:15px system-ui,sans-serif;width:100%;padding:12px;border:1px solid var(--line);background:#fcfaf4;color:var(--ink);border-radius:2px}
+.count-note{width:100%;color:var(--muted);font:13px system-ui,sans-serif}
+h2.sec{font-size:clamp(1.7rem,3vw,2.5rem);margin:55px 0 12px;display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+h2.sec .tag{font:12px system-ui,sans-serif;padding:7px 9px;background:#e8e5d9;letter-spacing:.08em}
+.cnt{font:13px system-ui,sans-serif;color:var(--muted)}.sec-sub{color:var(--muted);font:14px system-ui,sans-serif;margin:0 0 24px}
+.course-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(310px,100%),1fr));gap:22px}
+.card{min-width:0;display:flex;flex-direction:column;background:#fcfaf4;border:1px solid var(--line);padding:24px;box-shadow:3px 4px 0 #d6d0c34d}
+.card-top{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:18px;flex-wrap:wrap}
+.card-top>span:last-child{display:flex;flex-wrap:wrap;gap:6px}.code{font:13px system-ui,sans-serif;letter-spacing:.08em;color:var(--muted)}
+.dtag,.badge-exam,.badge-wip{font:10px/1.5 system-ui,sans-serif;letter-spacing:.05em;text-transform:uppercase;padding:3px 6px;background:#e8e5d9;color:var(--accent)}
+.badge-wip{background:#eee0bc;color:#634713}.badge-exam{color:#355d7b;background:#e4ebee}
+.card h3{font-size:1.5rem;line-height:1.2;margin:0 0 14px}.abs{font-size:15px;color:var(--muted);margin:0 0 18px;flex:1;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.skills{gap:6px;margin-bottom:20px}.sk,.chip{font:12px/1.5 system-ui,sans-serif;color:var(--muted);border:1px solid var(--line);padding:4px 7px}
+.card-foot{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid var(--line);padding-top:16px;font:12px system-ui,sans-serif;color:var(--muted)}
+.details{padding:7px 10px;color:var(--accent);white-space:nowrap}
+.empty{display:none;padding:50px 0;text-align:center}.noscript{padding:24px 0}
+.showcase-note{margin:55px 0;padding:28px;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+.overlay{position:fixed;inset:0;width:100%;height:100%;max-width:none;max-height:none;margin:0;padding:32px 16px;border:0;background:transparent;overflow-y:auto;color:var(--ink)}
+.overlay:not([open]){display:none}.overlay[open]{display:flex;align-items:flex-start;justify-content:center}.overlay::backdrop{background:#202a29b8}
+.modal{position:relative;width:min(760px,100%);background:var(--paper);padding:35px;box-shadow:0 15px 60px #0003;overflow-wrap:anywhere}
+.modal .x{display:block;margin:0 0 20px auto;background:#fcfaf4;border:1px solid var(--line);padding:8px 12px;color:var(--ink);font:14px system-ui,sans-serif;cursor:pointer}
+.modal h2{font-size:2rem;margin:12px 0}.modal .meta{font:13px/1.6 system-ui,sans-serif;text-transform:none;letter-spacing:0;color:var(--muted);margin-bottom:25px}
+.modal .abs-full{font-size:17px}.modal h4{font:12px system-ui,sans-serif;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin:28px 0 12px}.chips{gap:8px}
+.dlist{list-style:none;padding:0}.dlist li{display:flex;gap:16px;border-bottom:1px solid var(--line);padding:12px 0;font-size:15px}.dt{min-width:90px;font:12px/1.7 system-ui,sans-serif;color:var(--muted)}
+.mtable{border-collapse:collapse;width:100%;font-size:14px}.mtable td,.mtable th{text-align:left;vertical-align:top;padding:10px;border-bottom:1px solid var(--line)}.mtable th{font-weight:normal;color:var(--muted)}
+@media(max-width:760px){.showcase-hero{padding-top:45px}.stats{gap:22px}.modal{padding:22px}.overlay{padding:12px}.dlist li{flex-direction:column;gap:3px}.showcase-note{padding:20px 0}}
 </style>
 </head>
 <body>
-<div class="wrap">
-<div class="back"><a href="https://douglasweant.com">&larr; douglasweant.com</a></div>
-<header>
+<a class="skip" href="#main">Skip to content</a>
+<header><div class="wrap"><a class="brand" href="/"><span>DW</span> DOUGLAS WEANT</a><nav aria-label="Main navigation"><a href="/">Notebook</a><a href="/about">About</a><a href="/wgu-showcase" aria-current="page">Showcase</a><a href="/pgp">Contact</a></nav></div></header>
+<main id="main" tabindex="-1" class="wrap">
+<div class="showcase-hero">
+<p class="eyebrow">A personal notebook / Academic explorations</p>
   <h1>WGU Academic Showcase</h1>
   <p class="sub"><strong>Douglas R. Weant</strong> &mdash; thirty-six courses across three WGU degrees</p>
   <div class="degree-tags">
@@ -142,7 +75,7 @@ footer strong{color:var(--t2)}
     <div class="stat"><div class="n" id="st-exams">9</div><div class="l">Certification-aligned</div></div>
     <div class="stat"><div class="n" id="st-deliv">75</div><div class="l">Deliverables</div></div>
   </div>
-</header>
+</div>
 
 <div class="certs">
   <span class="lbl">Certifications</span>
@@ -163,28 +96,29 @@ footer strong{color:var(--t2)}
   <button class="pill" data-deg="MS_Cybersecurity">M.S. Cybersecurity</button>
   <button class="pill" data-deg="MSCS_AI_ML">M.S. CS &middot; AI/ML</button>
   <div class="search"><input id="q" type="text" placeholder="Search courses, topics, skills&hellip;" aria-label="Search courses"></div>
-  <div class="count-note" id="count-note"></div>
+  <div class="count-note" id="count-note" role="status" aria-live="polite"></div>
 </div>
 
 <div id="sections"></div>
-<noscript><div class="noscript">This showcase uses JavaScript to display course details. In brief: thirty-six courses across three WGU degrees &mdash; B.S. Cybersecurity &amp; Information Assurance (2024), M.S. Cybersecurity &amp; Information Assurance (2025), and M.S. Computer Science, AI/ML (in progress). See <a href="/work">Work</a> for an overview.</div></noscript>
+<noscript><div class="noscript">This showcase uses JavaScript to display course details. In brief: thirty-six courses across three WGU degrees &mdash; B.S. Cybersecurity &amp; Information Assurance (2024), M.S. Cybersecurity &amp; Information Assurance (2025), and M.S. Computer Science, AI/ML (in progress). See <a href="/about">About</a> for an overview.</div></noscript>
 <div class="empty" id="empty">No courses match that search.</div>
 
-<footer>
+<aside class="showcase-note">
   <strong>About this showcase.</strong> Each entry presents the course, an original project abstract,
   the topics and skills demonstrated, and the types of deliverables produced &mdash;
   <strong>never the complete coursework or assessment answers</strong>, in keeping with WGU's
   academic integrity standards. Fictional organization names (TechFite, CyberForge, Zip Products Inc.,
   Fielder Medical Center, and others) are WGU case-study entities, not real employers or clients.
-</footer>
-</div>
+</aside>
+</main>
+<footer class="footer"><div class="wrap"><span>© 2026 Douglas Weant</span><span>Made with curiosity. Still being revised.</span></div></footer>
 
-<div class="overlay" id="overlay">
-  <div class="modal" role="dialog" aria-modal="true">
-    <button class="x" id="close" aria-label="Close">&times;</button>
+<dialog class="overlay" id="overlay" aria-labelledby="course-title">
+  <div class="modal">
+    <button class="x" id="close" aria-label="Close course details">Close ×</button>
     <div id="modal-body"></div>
   </div>
-</div>
+</dialog>
 
 <script>
 const COURSES = [
@@ -243,14 +177,14 @@ function cardHTML(c){
   const agg={},order=[];
   (c.deliverables||[]).forEach(x=>{if(!(x.type in agg)){agg[x.type]=0;order.push(x.type);}agg[x.type]+=x.count;});
   const dc=order.map(t=>agg[t]+" "+plural(t,agg[t])).join(" \u00b7 ");
-  return '<div class="card" data-code="'+esc(c.code)+'">'
+  return '<article class="card" data-code="'+esc(c.code)+'">'
     +'<div class="card-top"><span class="code">'+esc(c.code)+'</span>'
     +'<span><span class="dtag '+d.cls+'">'+d.short+'</span>'+examBadge(c)+wipBadge(c)+'</span></div>'
     +'<h3>'+esc(c.title)+'</h3>'
     +'<p class="abs">'+esc(c.abstract)+'</p>'
     +'<div class="skills">'+sk+extra+'</div>'
-    +'<div class="card-foot"><span>'+esc(dc)+'</span><span class="more">Details &rarr;</span></div>'
-    +'</div>';
+    +'<div class="card-foot"><span>'+esc(dc)+'</span><button type="button" class="details" aria-label="View details for '+esc(c.code)+'">Details &rarr;</button></div>'
+    +'</article>';
 }
 function matches(c){
   if(fDeg!=="all"&&c.degree!==fDeg)return false;
@@ -271,19 +205,19 @@ function render(){
     sec.innerHTML='<h2 class="sec"><span class="tag '+d.cls+'">'+d.short+'</span> '+esc(d.label)
       +' <span class="cnt">'+list.length+' courses</span></h2>'
       +'<p class="sec-sub">'+esc(d.sub)+'</p>'
-      +'<div class="grid">'+list.map(cardHTML).join("")+'</div>';
+      +'<div class="course-grid">'+list.map(cardHTML).join("")+'</div>';
     box.appendChild(sec);
   });
   document.getElementById("empty").style.display=shown?"none":"block";
   document.getElementById("count-note").textContent=shown+" of "+COURSES.length+" courses shown";
-  box.querySelectorAll(".card").forEach(el=>el.addEventListener("click",()=>openModal(el.dataset.code)));
+  box.querySelectorAll(".details").forEach(el=>el.addEventListener("click",()=>openModal(el.closest(".card").dataset.code)));
 }
 function openModal(code){
   const c=COURSES.find(x=>x.code===code);if(!c)return;
   const d=DEG[c.degree];
   let h='<div class="card-top"><span class="code">'+esc(c.code)+'</span>'
     +'<span><span class="dtag '+d.cls+'">'+esc(d.label)+'</span>'+examBadge(c)+wipBadge(c)+'</span></div>'
-    +'<h2>'+esc(c.title)+'</h2>'
+    +'<h2 id="course-title">'+esc(c.title)+'</h2>'
     +'<div class="meta">'+esc(d.label)+'</div>'
     +'<p class="abs-full">'+esc(c.abstract)+'</p>';
   if(c.topics&&c.topics.length){
@@ -307,19 +241,26 @@ function openModal(code){
     h+='<h4>Status</h4><p style="font-size:14px;color:var(--t2);margin:0">Final course in progress \u2014 aligned with the AWS Certified Machine Learning Engineer \u2013 Associate exam.</p>';
   }
   document.getElementById("modal-body").innerHTML=h;
-  document.getElementById("overlay").classList.add("open");
+  document.getElementById("overlay").showModal();
   document.body.style.overflow="hidden";
 }
 function closeModal(){
-  document.getElementById("overlay").classList.remove("open");
+  document.getElementById("overlay").close();
   document.body.style.overflow="";
 }
 document.getElementById("close").addEventListener("click",closeModal);
 document.getElementById("overlay").addEventListener("click",e=>{if(e.target.id==="overlay")closeModal();});
-document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal();});
+document.getElementById("overlay").addEventListener("close",()=>{document.body.style.overflow="";});
+document.getElementById("overlay").addEventListener("keydown",e=>{
+  if(e.key!=="Tab")return;
+  const items=[...e.currentTarget.querySelectorAll('button,a[href],input,select,textarea,[tabindex="0"]')].filter(x=>!x.disabled);
+  const first=items[0],last=items[items.length-1];
+  if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}
+  else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}
+});
 document.querySelectorAll(".pill").forEach(p=>p.addEventListener("click",()=>{
   document.querySelectorAll(".pill").forEach(x=>x.classList.remove("on"));
-  p.classList.add("on");fDeg=p.dataset.deg;render();
+  p.classList.add("on");document.querySelectorAll(".pill").forEach(x=>x.setAttribute("aria-pressed",String(x===p)));fDeg=p.dataset.deg;render();
 }));
 document.getElementById("q").addEventListener("input",e=>{fQ=e.target.value.trim();render();});
 // stats
@@ -331,6 +272,7 @@ document.getElementById("q").addEventListener("input",e=>{fQ=e.target.value.trim
   document.getElementById("st-exams").textContent=ex;
   document.getElementById("st-deliv").textContent=dl;
 })();
+document.querySelectorAll(".pill").forEach(x=>x.setAttribute("aria-pressed",String(x.classList.contains("on"))));
 render();
 </script>
 </body>
