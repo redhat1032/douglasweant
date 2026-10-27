@@ -76,7 +76,7 @@ body.js:not(.rm) .plot .track{stroke-dasharray:1 1}
 .signal{display:flex;gap:1.2rem;align-items:center;margin:1.6rem 0;padding:1rem;border:1px solid #ffffff1f;background:#ffffff06}
 .biglamp{flex:none;width:64px;height:64px;border-radius:50%;background:radial-gradient(circle,#3a3020 50%,#1a1510 52%);border:4px solid #5d7480}
 .biglamp.on{background:radial-gradient(circle,#fff2d8,#ffd9a0 40%,#e08a4a 75%)}
-.signal figcaption{display:flex;flex-direction:column;gap:.2rem}.morse code{color:var(--dusk);font-size:1.05rem;letter-spacing:.1em}
+.signal figcaption{display:flex;flex-direction:column;gap:.2rem}.morse code{display:block;white-space:nowrap;margin-top:.2em;color:var(--dusk);font-size:clamp(.7rem,3.6vw,1.05rem);letter-spacing:.1em}
 .cipher{position:relative;border:1px solid #e08a4a66;padding:1.2rem 1.2rem 1rem;background:repeating-linear-gradient(45deg,#ffffff05 0 8px,transparent 8px 16px),#0e1418;max-width:640px}
 .hoist{display:flex;gap:4px;margin-bottom:.8rem}.hoist i{width:34px;height:24px;display:block}
 .hoist i:nth-child(1){background:linear-gradient(#e0c34a 33%,#1f4ea8 33% 66%,#e0c34a 66%)}
