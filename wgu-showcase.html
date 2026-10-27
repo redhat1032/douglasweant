@@ -159,6 +159,44 @@ const COURSES = [
 {"code": "D803", "degree": "MSCS_AI_ML", "title": "Natural Language Processing", "abstract": "Natural language processing course built as a GitLab-versioned portfolio project. Task 1: sentiment-analysis data preparation — sourced and limited an Amazon polarity review dataset (500+ items), then applied tokenization, lowercasing, stopword removal, lemmatization, and punctuation/missing-data handling to produce a preprocessed dataset. Task 2: designed and implemented a working NLP model in Python (scikit-learn, pandas, NLTK) with documented libraries and environment, then evaluated it with accuracy, precision, recall, F1-score, and a confusion matrix, and optimized it via hyperparameter tuning (GridSearchCV) and n-gram tuning.", "topics": ["NLP text preprocessing", "sentiment analysis", "model evaluation", "hyperparameter and n-gram tuning"], "skills": ["NLP pipelines (scikit-learn, NLTK)", "sentiment classification", "model optimization", "GitLab version control"], "deliverables": [{"type": "paper", "count": 3, "description": "Three task reports (data preparation; NLP system build and optimization; follow-on)"}, {"type": "dataset", "count": 1, "description": "Preprocessed Amazon polarity sentiment dataset (CSV)"}, {"type": "repository", "count": 1, "description": "GitLab repository with documented commits A–F"}], "key_metrics": ["Evaluation metrics: accuracy, F1-score, and baseline confusion matrix"], "status": "completed", "exam_based": false},
 {"code": "D804", "degree": "MSCS_AI_ML", "title": "Advanced AI for Computer Scientists", "abstract": "Advanced AI systems course integrating AI techniques with data engineering, delivered as two versioned mini-projects. Model 1: a multilayer CNN image classifier (TensorFlow/Keras) on CIFAR-10 (60k 32x32 RGB images) — three convolutional stages with ReLU and max-pooling, mini-batch gradient descent with Adam, holdout validation, and a deployability story via REST APIs/containers. Model 2: a probabilistic cyber-defensive spam classifier using Gaussian Naive Bayes (scikit-learn) with univariate SelectKBest feature reduction and stratified splits. Both models were benchmarked, optimized, and validated, with all work tracked in GitLab across a six-commit history.", "topics": ["advanced AI/ML systems", "convolutional neural networks", "probabilistic reasoning", "model evaluation and optimization"], "skills": ["TensorFlow/Keras", "scikit-learn", "data engineering for ML", "model deployment (REST/container)", "GitLab version control"], "deliverables": [{"type": "paper", "count": 1, "description": "Final project report"}, {"type": "web page", "count": 1, "description": "Hand-built portfolio page (model metrics, architecture specs, git provenance)"}, {"type": "repository", "count": 1, "description": "GitLab repository and commit log (6 commits)"}], "key_metrics": ["Model 1 (CNN, CIFAR-10): 71.32% baseline accuracy → 75.40% optimized via data augmentation", "Model 2 (Gaussian Naive Bayes): accuracy 82.20% → 83.15%; recall 93.80% → 94.20%", "Model 2 feature space: 57 features → 30 via SelectKBest"], "status": "completed", "exam_based": false}
 ];
+const BRIEFS = {
+  "C172": "Networking and security fundamentals, from network topologies and protocols to vulnerabilities, mitigation, and security policies.",
+  "C176": "Project planning and delivery across the full life cycle, including scope, resources, risk, quality, and reporting.",
+  "C393": "Practical foundations in computer hardware, networking, virtualization, and troubleshooting across desktop and data-center environments.",
+  "C394": "Desktop support, operating systems, security, and software troubleshooting for everyday IT operations.",
+  "C769": "A capstone proposal for an automated threat-intelligence platform with email sandboxing to help protect a fictional business from ransomware.",
+  "C841": "A fictional company case study connecting security governance failures to legal obligations, remediation, and employee awareness training.",
+  "C843": "A breach-response case study covering volunteer-data protection, incident response, technical controls, and risk management for a fictional nonprofit.",
+  "C844": "Network mapping and traffic analysis with Nmap and Wireshark, plus a wireless and BYOD security assessment for a fictional startup.",
+  "C845": "Operational security principles spanning access control, cryptography, security testing, incident response, and risk management.",
+  "C846": "ITIL-based practices for managing IT services, infrastructure, development, and operations, aligned with ITIL 4 Foundation.",
+  "D320": "Cloud security fundamentals covering identity, secure design, risk management, continuity, and legal and compliance concerns.",
+  "D325": "Network configuration, operations, performance, security, and troubleshooting, aligned with CompTIA Network+.",
+  "D329": "Applied enterprise security covering threat identification, secure infrastructure, incident response, governance, risk, and compliance.",
+  "D332": "Penetration-testing planning, reconnaissance, exploitation, and reporting, aligned with CompTIA PenTest+.",
+  "D334": "Cryptographic principles, cryptanalysis, and the use of symmetric and asymmetric encryption within organizational security requirements.",
+  "D335": "Python scripting fundamentals, including control flow, functions, loops, modules, packages, and libraries.",
+  "D340": "Threat detection, vulnerability analysis, incident response, and recovery, aligned with CompTIA CySA+.",
+  "D426": "Conceptual, logical, and physical data modeling, with SQL database creation and normalization.",
+  "D427": "Hands-on MySQL work covering database structures, queries, joins, subqueries, and data updates.",
+  "D431": "An insider-threat case study combining an investigative plan with hands-on evidence recovery and reporting using Autopsy.",
+  "D482": "Secure network designs for company scenarios, combining risk analysis, defense in depth, zero trust, and a budgeted hybrid-cloud approach.",
+  "D485": "An Azure migration security plan for a fictional company, covering access controls, encryption, backups, compliance, and shared responsibility.",
+  "D486": "A healthcare case study assessing governance and security gaps, prioritizing risk, and planning remediation and payment-system compliance.",
+  "D487": "Secure software practices across the development life cycle, including acquisition, defense in depth, Agile, and DevSecOps.",
+  "D488": "Enterprise security architecture covering readiness assessment, data protection, application integration, cloud systems, and incident response.",
+  "D489": "An independent security assessment for a company scenario, with prioritized findings and recommendations.",
+  "D490": "A graduate capstone designing AI-specific incident response, zero-trust policies, training, and risk management for a fictional consultancy.",
+  "D793": "Formal-language research and a modular Fortran weather program using derived types and type-bound procedures.",
+  "D794": "Research into computer architecture, its evolution, security, and sustainability, alongside a scenario-based system design plan.",
+  "D795": "A Python ambulance-dispatch project using A* route finding, logging, and algorithm benchmarking.",
+  "D796": "Nine Bash scripts automating user management, packages, network checks, disk maintenance, and archival tasks.",
+  "D797": "Applied machine-learning projects covering data preparation, algorithm selection, evaluation, optimization, and ethics.",
+  "D801": "Python-based supervised and unsupervised learning, evaluation, and optimization. This final course is in progress and aligned with the AWS machine-learning engineer exam.",
+  "D802": "A four-part computer-vision project covering image preparation, CNN design, tuning, and evaluation with CIFAR-10 datasets.",
+  "D803": "A sentiment-analysis project covering text preparation, model development, evaluation, and optimization with Python NLP tools.",
+  "D804": "Two AI projects combining a convolutional image classifier and a probabilistic spam classifier, with evaluation, optimization, and deployment considerations."
+};
 const DEG = {
   BS_Cybersecurity:{label:"B.S. Cybersecurity & Information Assurance", sub:"Completed 2024 \u2014 foundations through capstone", cls:"bs", short:"BS"},
   MS_Cybersecurity:{label:"M.S. Cybersecurity & Information Assurance", sub:"Completed 2025 \u2014 graduate security engineering & management", cls:"ms", short:"MS"},
@@ -181,7 +219,7 @@ function cardHTML(c){
     +'<div class="card-top"><span class="code">'+esc(c.code)+'</span>'
     +'<span><span class="dtag '+d.cls+'">'+d.short+'</span>'+examBadge(c)+wipBadge(c)+'</span></div>'
     +'<h3>'+esc(c.title)+'</h3>'
-    +'<p class="abs">'+esc(c.abstract)+'</p>'
+    +'<p class="abs">'+esc(BRIEFS[c.code])+'</p>'
     +'<div class="skills">'+sk+extra+'</div>'
     +'<div class="card-foot"><span>'+esc(dc)+'</span><button type="button" class="details" aria-label="View details for '+esc(c.code)+'">Details &rarr;</button></div>'
     +'</article>';
