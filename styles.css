@@ -94,15 +94,16 @@ dialog.console::backdrop{background:#000a}.con-head{display:flex;justify-content
 @media (prefers-reduced-motion:reduce){.grain,.fog{animation:none!important}.worlds i{transition:none}}
 [hidden]{display:none!important}
 .con-out pre{overflow-wrap:anywhere}
-@media (max-width:430px){
-dialog.console{position:fixed;inset:auto 0 0 0;margin:0;width:100%;max-width:100%;height:min(70dvh,var(--vvh,100dvh));max-height:calc(var(--vvh,100dvh) - env(safe-area-inset-top) - 8px);display:none;flex-direction:column;box-sizing:border-box;border-width:1px 0 0;border-radius:12px 12px 0 0;font-size:13px;padding:0 env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);bottom:var(--kb,0px)}
-dialog.console[open]{display:flex}
-.con-head{align-items:center;padding:.2rem .3rem .2rem .9rem}
-.con-head button{min-width:44px;min-height:44px;font-size:1rem}
-.con-out{flex:1;height:auto;min-height:0;overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
-.con-in{padding:.4rem .8rem}
-.con-in input{font-size:16px;min-height:36px;min-width:0}
-.con-btn{min-height:36px;padding:.3rem .7rem}
-}
 html,body{overflow-x:clip}
 @media (max-width:430px){.nav nav{display:flex;flex-wrap:wrap;row-gap:.5rem;align-items:center}}
+@media (max-width:600px),(pointer:coarse) and (max-width:900px),(pointer:coarse) and (max-height:500px){
+dialog.console{position:fixed;inset:auto 0 0 0;margin:0;width:100%;max-width:100%;height:auto;max-height:50vh;max-height:min(45dvh,var(--vvh,100dvh));display:none;flex-direction:column;box-sizing:border-box;border-width:1px 0 0;border-radius:10px 10px 0 0;font:12px/1.35 ui-monospace,monospace;padding:0 env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);bottom:var(--kb,0px)}
+dialog.console[open]{display:flex}
+.con-head{flex:none;align-items:center;height:36px;box-sizing:border-box;padding:0 0 0 .7rem;font-size:10px}
+.con-head button{min-width:44px;min-height:36px;height:36px;font-size:14px;padding:0 .6rem}
+.con-out{flex:1 1 auto;height:auto;min-height:3em;overflow-y:auto;overflow-x:hidden;padding:.4rem .7rem}
+.con-out pre{margin:0 0 .25rem}
+.con-in{flex:none;height:36px;box-sizing:border-box;align-items:center;padding:0 .7rem}
+.con-in input{font-size:16px;height:30px;padding:0;min-width:0;line-height:1}
+.con-btn{min-height:36px;padding:.3rem .7rem}
+}
