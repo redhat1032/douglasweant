@@ -16,7 +16,7 @@ addEventListener('scroll',()=>{if(!tick){tick=true;requestAnimationFrame(onS);}}
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)b.dataset.w=e.target.dataset.world||'0';}),{rootMargin:'-45% 0px -45% 0px'});
 d.querySelectorAll('[data-world],.intro,.course,#about,#notebook,#contact').forEach(s=>io.observe(s));
 // console easter egg (facts only)
-const dlg=d.getElementById('console'),out=d.getElementById('conOut'),inp=d.getElementById('conI'),btn=d.getElementById('conBtn');if(!dlg)return;btn.hidden=false;
+const dlg=d.getElementById('console'),out=d.getElementById('conOut'),inp=d.getElementById('conI'),btn=d.getElementById('conBtn');if(!dlg)return;btn.hidden=false;const vv=window.visualViewport;if(vv){const fit=()=>{dlg.style.setProperty('--vvh',vv.height+'px');dlg.style.setProperty('--kb',Math.max(0,innerHeight-vv.height-vv.offsetTop)+'px')};vv.addEventListener('resize',fit);vv.addEventListener('scroll',fit);fit();}
 const C={help:'Commands: whoami, service, study, projects, showcase, contact, pgp, morse <text>, clear, exit',
 whoami:"Douglas Weant. Navy Signalman, food-manufacturing R&D, graduate study in cybersecurity and AI.",
 service:'Navy Signalman and Master-at-Arms, then Air Force Reserve Security Forces — NCOIC of CATM for the 932nd and then the 375th Air Wing.',
