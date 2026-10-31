@@ -8,6 +8,9 @@ const setLights=red=>{red?root.setAttribute('data-lights','red'):root.removeAttr
 if(lb){lb.hidden=false;lb.setAttribute('aria-pressed',String(root.getAttribute('data-lights')==='red'));
  lb.onclick=()=>setLights(lb.getAttribute('aria-pressed')!=='true');}
 
+/* a page restored with Back may be stale: pick up the red-lights choice made on another page */
+addEventListener('pageshow',e=>{if(!e.persisted)return;try{const red=localStorage.getItem('lights')==='red';if(red!==(root.getAttribute('data-lights')==='red'))setLights(red);}catch(x){}});
+
 /* ---------- palette for the canvas, read from the CSS tokens ---------- */
 const P={};
 const hex=v=>{v=v.trim().replace('#','');if(v.length===3)v=v.replace(/./g,'$&$&');const n=parseInt(v,16);return[n>>16&255,n>>8&255,n&255];};
@@ -60,7 +63,7 @@ if(cv){
   const ly=hz-5;ctx.fillStyle=rgba(mix(P.night,P.sea,.4),1);ctx.fillRect(lx-26,hz-5,52,5);ctx.fillRect(lx-12,hz-10,16,5);ctx.fillRect(lx+6,hz-13,3,8);
   const rad=14+lit*150;g=ctx.createRadialGradient(lx,ly,0,lx,ly,rad);g.addColorStop(0,rgba(P.lamp,.25+lit*.75));g.addColorStop(.18,rgba(P.lamp,lit*.45));g.addColorStop(1,rgba(P.lamp,0));
   ctx.fillStyle=g;ctx.fillRect(lx-rad,ly-rad,rad*2,rad*2);ctx.fillStyle=rgba(P.lamp,.35+lit*.65);ctx.beginPath();ctx.arc(lx,ly,2.2,0,6.283);ctx.fill();};
- const frame=now=>{requestAnimationFrame(frame);if(!visible)return;const dt=Math.min(now-(last||now),100);last=now;
+ const frame=now=>{requestAnimationFrame(frame);const hr=hero?hero.getBoundingClientRect():null,vis=!d.hidden&&(!hr||(hr.bottom>0&&hr.top<innerHeight));if(!vis){if(visible){visible=false;tone(false);}last=0;return;}visible=true;const dt=Math.max(0,Math.min(now-(last||now),100));last=now;
   if(t0!==null){const el=(now-t0)/U;let on=false;
    while(ei<cur.ev.length&&el>=cur.ev[ei].e){cur.ev[ei].el.classList.remove('on');ei++;}
    if(ei<cur.ev.length&&el>=cur.ev[ei].s){on=true;cur.ev[ei].el.classList.add('on');}
@@ -68,10 +71,10 @@ if(cv){
    if(el>cur.total+2){t0=null;rest=now+4200;target=0;if(form)statusEl.textContent='Lamp idle';}}
   else{target=0;if(auto&&rest&&now>rest&&cur.ev.length){t0=now;ei=0;rest=0;}}
   if(target!==lastOn){tone(!!target);lastOn=target;}
-  lit+=(target-lit)*(1-Math.exp(-dt/28));draw(now);};
+  lit+=(target-lit)*(1-Math.exp(-dt/28));if(!isFinite(lit))lit=0;draw(now);};
  size();addEventListener('resize',size);
  const hero=cv.closest('.hero');
- if('IntersectionObserver' in window&&hero)new IntersectionObserver(en=>{visible=en[0].isIntersecting;if(!visible)tone(false);},{threshold:0}).observe(hero);
+ addEventListener('pageshow',e=>{if(e.persisted){size();readPalette();last=0;lit=0;}});
  if(!RM)t0=performance.now()+600;
  requestAnimationFrame(frame);
  /* the console and other scripts can ask the lamp to send a message */
