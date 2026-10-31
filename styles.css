@@ -1,5 +1,5 @@
 /* douglasweant.com — night-watch design. Shared by the home page, the showcase and the blog.
-   Single committed look (dark). "Red lights" swaps the palette for night-bridge lighting. */
+   Single committed look (dark). */
 @font-face{font-family:"Saira Stencil One";src:url(assets/fonts/saira-stencil-one.woff2) format("woff2");font-weight:400;font-display:swap}
 @font-face{font-family:"Source Serif 4";src:url(assets/fonts/source-serif-4.woff2) format("woff2");font-weight:200 900;font-style:normal;font-display:swap}
 @font-face{font-family:"Source Serif 4";src:url(assets/fonts/source-serif-4-italic.woff2) format("woff2");font-weight:200 900;font-style:italic;font-display:swap}
@@ -14,14 +14,10 @@
   --util:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
   color-scheme:dark;
 }
-:root[data-lights="red"]{
-  --night:#0B0405;--deep:#150708;--sea:#210A0C;--line:#4A1B1E;
-  --foam:#F4BDB2;--mist:#C08178;--lamp:#FF6A55;--flag:#FF8F78;
-}
 *{box-sizing:border-box}
 [hidden]{display:none!important}
 html{scroll-behavior:smooth;scroll-padding-top:16px}
-body{margin:0;background:var(--night);color:var(--foam);font:400 1.125rem/1.7 var(--body);-webkit-font-smoothing:antialiased;transition:background .6s,color .6s}
+body{margin:0;background:var(--night);color:var(--foam);font:400 1.125rem/1.7 var(--body);-webkit-font-smoothing:antialiased}
 a{color:var(--foam);text-decoration-color:var(--flag);text-underline-offset:4px;text-decoration-thickness:1.5px}
 a:hover{color:var(--lamp)}
 :focus-visible{outline:2px solid var(--lamp);outline-offset:3px;border-radius:2px}

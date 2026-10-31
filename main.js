@@ -1,16 +1,6 @@
 (()=>{const d=document,root=d.documentElement,b=d.body;b.classList.remove('nojs');b.classList.add('js');
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;if(RM)b.classList.add('rm');
 
-/* ---------- red lights (remembered across pages) ---------- */
-const lb=d.getElementById('lights');
-const setLights=red=>{red?root.setAttribute('data-lights','red'):root.removeAttribute('data-lights');if(lb)lb.setAttribute('aria-pressed',String(red));
- try{red?localStorage.setItem('lights','red'):localStorage.removeItem('lights');}catch(e){}readPalette();};
-if(lb){lb.hidden=false;lb.setAttribute('aria-pressed',String(root.getAttribute('data-lights')==='red'));
- lb.onclick=()=>setLights(lb.getAttribute('aria-pressed')!=='true');}
-
-/* a page restored with Back may be stale: pick up the red-lights choice made on another page */
-addEventListener('pageshow',e=>{if(!e.persisted)return;try{const red=localStorage.getItem('lights')==='red';if(red!==(root.getAttribute('data-lights')==='red'))setLights(red);}catch(x){}});
-
 /* ---------- palette for the canvas, read from the CSS tokens ---------- */
 const P={};
 const hex=v=>{v=v.trim().replace('#','');if(v.length===3)v=v.replace(/./g,'$&$&');const n=parseInt(v,16);return[n>>16&255,n>>8&255,n&255];};
@@ -116,7 +106,7 @@ d.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('click',()=>
 
 /* ---------- console (facts only) ---------- */
 const dlg=d.getElementById('console'),out=d.getElementById('conOut'),inp=d.getElementById('conI'),btn=d.getElementById('conBtn');if(!dlg)return;btn.hidden=false;const vv=window.visualViewport;if(vv){const fit=()=>{dlg.style.setProperty('--vvh',vv.height+'px');dlg.style.setProperty('--kb',Math.max(0,innerHeight-vv.height-vv.offsetTop)+'px')};vv.addEventListener('resize',fit);vv.addEventListener('scroll',fit);fit();}
-const C={help:'Commands: whoami, service, study, projects, showcase, contact, pgp, morse <text>, watch <text>, lights, clear, exit',
+const C={help:'Commands: whoami, service, study, projects, showcase, contact, pgp, morse <text>, watch <text>, clear, exit',
 whoami:"Douglas Weant. Navy Signalman, food-manufacturing R&D, graduate study in cybersecurity and AI.",
 service:'Navy Signalman and Master-at-Arms, then Air Force Reserve Security Forces — NCOIC of CATM for the 932nd and then the 375th Air Wing.',
 study:"B.S. Cybersecurity & IA — 2024 · M.S. Cybersecurity & IA — 2025 · M.S. Computer Science, AI/ML — in progress. I'm considering pursuing a PhD.",
@@ -131,6 +121,5 @@ d.getElementById('conF').onsubmit=e=>{e.preventDefault();const v=inp.value.trim(
  if(k==='clear')out.textContent='';else if(k==='exit')dlg.close();
  else if(k==='morse'){const t=a.join(' ').slice(0,40);print(t.toUpperCase().split(' ').map(w=>[...w].map(ch=>M[ch.toUpperCase()]||'?').join(' ')).join(' / ')||'Usage: morse <text>');}
  else if(k==='watch'){const t=a.join(' ').slice(0,24)||'WATCH';root.dispatchEvent(new CustomEvent('transmit',{detail:t}));dlg.close();scrollTo({top:0,behavior:RM?'auto':'smooth'});}
- else if(k==='lights'){setLights(root.getAttribute('data-lights')!=='red');print('Lights changed.');}
  else print(C[k]||'Unknown command. Type help.');};
 })();
