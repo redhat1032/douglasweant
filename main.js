@@ -1,16 +1,6 @@
 (()=>{const d=document,root=d.documentElement,b=d.body;b.classList.remove('nojs');b.classList.add('js');
 const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;if(RM)b.classList.add('rm');
 
-/* ---------- red lights (remembered across pages) ---------- */
-const lb=d.getElementById('lights');
-const setLights=red=>{red?root.setAttribute('data-lights','red'):root.removeAttribute('data-lights');if(lb)lb.setAttribute('aria-pressed',String(red));
- try{red?localStorage.setItem('lights','red'):localStorage.removeItem('lights');}catch(e){}readPalette();};
-if(lb){lb.hidden=false;lb.setAttribute('aria-pressed',String(root.getAttribute('data-lights')==='red'));
- lb.onclick=()=>setLights(lb.getAttribute('aria-pressed')!=='true');}
-
-/* a page restored with Back may be stale: pick up the red-lights choice made on another page */
-addEventListener('pageshow',e=>{if(!e.persisted)return;try{const red=localStorage.getItem('lights')==='red';if(red!==(root.getAttribute('data-lights')==='red'))setLights(red);}catch(x){}});
-
 /* ---------- palette for the canvas, read from the CSS tokens ---------- */
 const P={};
 const hex=v=>{v=v.trim().replace('#','');if(v.length===3)v=v.replace(/./g,'$&$&');const n=parseInt(v,16);return[n>>16&255,n>>8&255,n&255];};
@@ -48,9 +38,17 @@ if(cv){
  if(form)form.addEventListener('submit',e=>{e.preventDefault();const bld=build(msgIn.value);
   if(!bld.ev.length){statusEl.textContent='Use letters, numbers, spaces, or . , ? /';return;}
   cur=bld;t0=performance.now();ei=0;auto=true;});
- const size=()=>{const r=cv.getBoundingClientRect(),dp=Math.min(devicePixelRatio||1,2);W=r.width;H=r.height;cv.width=Math.round(W*dp);cv.height=Math.round(H*dp);ctx.setTransform(dp,0,0,dp,0,0);
-  const n=Math.round(W*H/5200);stars=[];for(let i=0;i<n;i++)stars.push({x:Math.random()*W,y:Math.random()*H*.6,r:Math.random()*1.1+.25,p:Math.random()*6.28,s:.5+Math.random()*1.5});};
- const draw=now=>{const hz=H*.6,tt=RM?0:now/1000;
+ /* The hero box changes after first paint (webfonts, the Morse line, mobile chrome) without a window resize.
+    Size the bitmap to the live box, and never to 0 — a zero rect on restore would wipe the ship.
+    Re-apply the transform on every paint: bfcache can clear the backing store and reset it. */
+ let dp=1,raf=0,hiddenAt=0;
+ const fit=()=>{const r=cv.getBoundingClientRect();if(r.width<2||r.height<2)return false;
+  dp=Math.min(devicePixelRatio||1,2);const bw=Math.round(r.width*dp),bh=Math.round(r.height*dp);
+  if(bw!==cv.width||bh!==cv.height){W=r.width;H=r.height;cv.width=bw;cv.height=bh;
+   const n=Math.round(Math.max(1,W*H/5200));stars=[];for(let i=0;i<n;i++)stars.push({x:Math.random()*W,y:Math.random()*H*.6,r:Math.random()*1.1+.25,p:Math.random()*6.28,s:.5+Math.random()*1.5});}
+  else{W=r.width;H=r.height;}
+  ctx.setTransform(dp,0,0,dp,0,0);return true;};
+ const draw=now=>{ctx.setTransform(dp,0,0,dp,0,0);const hz=H*.6,tt=RM?0:now/1000;
   let g=ctx.createLinearGradient(0,0,0,hz);g.addColorStop(0,rgba(P.night,1));g.addColorStop(1,rgba(mix(P.night,P.sea,.85),1));ctx.fillStyle=g;ctx.fillRect(0,0,W,hz+1);
   for(const s of stars){const a=.25+.55*(.5+.5*Math.sin(tt*s.s+s.p))*(1-s.y/hz*.5);ctx.fillStyle=rgba(P.foam,a);ctx.fillRect(s.x,s.y,s.r,s.r);}
   g=ctx.createLinearGradient(0,hz,0,H);g.addColorStop(0,rgba(mix(P.sea,P.night,.2),1));g.addColorStop(1,rgba(P.night,1));ctx.fillStyle=g;ctx.fillRect(0,hz,W,H-hz);
@@ -63,7 +61,8 @@ if(cv){
   const ly=hz-5;ctx.fillStyle=rgba(mix(P.night,P.sea,.4),1);ctx.fillRect(lx-26,hz-5,52,5);ctx.fillRect(lx-12,hz-10,16,5);ctx.fillRect(lx+6,hz-13,3,8);
   const rad=14+lit*150;g=ctx.createRadialGradient(lx,ly,0,lx,ly,rad);g.addColorStop(0,rgba(P.lamp,.25+lit*.75));g.addColorStop(.18,rgba(P.lamp,lit*.45));g.addColorStop(1,rgba(P.lamp,0));
   ctx.fillStyle=g;ctx.fillRect(lx-rad,ly-rad,rad*2,rad*2);ctx.fillStyle=rgba(P.lamp,.35+lit*.65);ctx.beginPath();ctx.arc(lx,ly,2.2,0,6.283);ctx.fill();};
- const frame=now=>{requestAnimationFrame(frame);const hr=hero?hero.getBoundingClientRect():null,vis=!d.hidden&&(!hr||(hr.bottom>0&&hr.top<innerHeight));if(!vis){if(visible){visible=false;tone(false);}last=0;return;}visible=true;const dt=Math.max(0,Math.min(now-(last||now),100));last=now;
+ const hero=cv.closest('.hero');
+ const frame=now=>{raf=requestAnimationFrame(frame);const hr=hero.getBoundingClientRect(),vis=!d.hidden&&hr.width>1&&hr.bottom>0&&hr.top<innerHeight;if(!vis){if(visible){visible=false;tone(false);}last=0;return;}visible=true;if(!fit())return;const dt=Math.max(0,Math.min(now-(last||now),100));last=now;
   if(t0!==null){const el=(now-t0)/U;let on=false;
    while(ei<cur.ev.length&&el>=cur.ev[ei].e){cur.ev[ei].el.classList.remove('on');ei++;}
    if(ei<cur.ev.length&&el>=cur.ev[ei].s){on=true;cur.ev[ei].el.classList.add('on');}
@@ -72,11 +71,19 @@ if(cv){
   else{target=0;if(auto&&rest&&now>rest&&cur.ev.length){t0=now;ei=0;rest=0;}}
   if(target!==lastOn){tone(!!target);lastOn=target;}
   lit+=(target-lit)*(1-Math.exp(-dt/28));if(!isFinite(lit))lit=0;draw(now);};
- size();addEventListener('resize',size);
- const hero=cv.closest('.hero');
- addEventListener('pageshow',e=>{if(e.persisted){size();readPalette();last=0;lit=0;}});
+ const paint=()=>{if(fit())draw(performance.now());};
+ const wake=()=>{readPalette();paint();cancelAnimationFrame(raf);raf=requestAnimationFrame(frame);};
+ fit();addEventListener('resize',wake);
+ addEventListener('pagehide',()=>{hiddenAt=performance.now();tone(false);});
+ /* Back/forward can restore a blank canvas and a clock that jumped while the page was frozen.
+    Paint immediately (rAF may not resume), and don't zero the lamp — that was extinguishing the ship. */
+ addEventListener('pageshow',e=>{if(!e.persisted)return;const gap=performance.now()-hiddenAt;
+  if(gap>500&&auto&&cur.ev.length){cur.ev.forEach(ev=>ev.el.classList.remove('on'));t0=performance.now();ei=0;rest=0;}
+  last=0;wake();requestAnimationFrame(paint);});
+ cv.addEventListener('contextrestored',()=>{last=0;wake();});
+ if(d.fonts&&d.fonts.ready)d.fonts.ready.then(paint);
  if(!RM)t0=performance.now()+600;
- requestAnimationFrame(frame);
+ raf=requestAnimationFrame(frame);
  /* the console and other scripts can ask the lamp to send a message */
  root.addEventListener('transmit',e=>{if(msgIn)msgIn.value=e.detail;const bld=build(e.detail);if(bld.ev.length){cur=bld;t0=performance.now();ei=0;auto=true;}});
 }
@@ -99,7 +106,7 @@ d.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('click',()=>
 
 /* ---------- console (facts only) ---------- */
 const dlg=d.getElementById('console'),out=d.getElementById('conOut'),inp=d.getElementById('conI'),btn=d.getElementById('conBtn');if(!dlg)return;btn.hidden=false;const vv=window.visualViewport;if(vv){const fit=()=>{dlg.style.setProperty('--vvh',vv.height+'px');dlg.style.setProperty('--kb',Math.max(0,innerHeight-vv.height-vv.offsetTop)+'px')};vv.addEventListener('resize',fit);vv.addEventListener('scroll',fit);fit();}
-const C={help:'Commands: whoami, service, study, projects, showcase, contact, pgp, morse <text>, watch <text>, lights, clear, exit',
+const C={help:'Commands: whoami, service, study, projects, showcase, contact, pgp, morse <text>, watch <text>, clear, exit',
 whoami:"Douglas Weant. Navy Signalman, food-manufacturing R&D, graduate study in cybersecurity and AI.",
 service:'Navy Signalman and Master-at-Arms, then Air Force Reserve Security Forces — NCOIC of CATM for the 932nd and then the 375th Air Wing.',
 study:"B.S. Cybersecurity & IA — 2024 · M.S. Cybersecurity & IA — 2025 · M.S. Computer Science, AI/ML — in progress. I'm considering pursuing a PhD.",
@@ -114,6 +121,5 @@ d.getElementById('conF').onsubmit=e=>{e.preventDefault();const v=inp.value.trim(
  if(k==='clear')out.textContent='';else if(k==='exit')dlg.close();
  else if(k==='morse'){const t=a.join(' ').slice(0,40);print(t.toUpperCase().split(' ').map(w=>[...w].map(ch=>M[ch.toUpperCase()]||'?').join(' ')).join(' / ')||'Usage: morse <text>');}
  else if(k==='watch'){const t=a.join(' ').slice(0,24)||'WATCH';root.dispatchEvent(new CustomEvent('transmit',{detail:t}));dlg.close();scrollTo({top:0,behavior:RM?'auto':'smooth'});}
- else if(k==='lights'){setLights(root.getAttribute('data-lights')!=='red');print('Lights changed.');}
  else print(C[k]||'Unknown command. Type help.');};
 })();
