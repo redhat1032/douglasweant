@@ -4,7 +4,7 @@
 <meta name="description" content="Notes on technology, systems, security, AI, and food history from Douglas Weant.">
 <meta name="theme-color" content="#070B14">
 <link rel="icon" href="data:,">
-<link rel="stylesheet" href="styles.css?v=20261031b">
+<link rel="stylesheet" href="styles.css?v=20261031c">
 <script src="main.js?v=20261031b" defer></script></head>
 <body class="nojs">
 <a class="skip" href="#main">Skip to content</a>
@@ -13,8 +13,8 @@
   <canvas id="sea" data-msg="WATCH" aria-hidden="true"></canvas>
   <header class="g"><div class="wrap top">
     <a class="brand" href="./"><i aria-hidden="true"></i>Douglas Weant</a>
-    <nav aria-label="Primary"><a href="#about">About</a><a href="#notebook">Notebook</a><a href="wgu-showcase/">Showcase</a><a href="#pgp">PGP</a><a href="#contact">Contact</a>
-      <button type="button" class="btn" id="conBtn" hidden aria-haspopup="dialog">Console <kbd>`</kbd></button></nav>
+    <nav aria-label="Primary"><a href="#about">About</a><a href="#notebook" hidden>Field Notes</a><a href="wgu-showcase/">Showcase</a><a href="#pgp">PGP</a><a href="#contact">Contact</a>
+      <button type="button" class="btn con-btn" id="conBtn" hidden aria-haspopup="dialog" title="Open the CIC console (press the ` backtick key)" aria-label="Open the CIC console. Keyboard shortcut: backtick key.">Console <kbd>`</kbd></button></nav>
   </div></header>
   <div class="g mid"><div class="wrap">
     <h1>Douglas Weant</h1>
@@ -42,6 +42,7 @@
     <p class="lede">I wonder what happens if…</p>
     <p>I like understanding how things work. Especially when someone says they can't.</p>
     <p>I explore technology, systems, security, artificial intelligence, and whatever else catches my curiosity. Sometimes I build things. Sometimes I write about them. Often, one question leads to five more.</p>
+    <p>This website isn't a pitch deck. It's a place to collect the things I'm learning and the questions I haven't answered yet.</p>
     <p class="tagline">Understand the system. Question the assumptions. Try something. See what happens.</p>
     <p><a href="#about">A little about me</a> &nbsp;·&nbsp; <a href="#learning">What I'm exploring</a></p>
   </div>
@@ -75,7 +76,6 @@
   <div class="intro">
     <h2 id="s2">One question leads to another.</h2>
     <div>
-      <p class="lede">I completed a B.S. and M.S. in Cybersecurity and Information Assurance at Western Governors University and am finishing an M.S. in Computer Science with a concentration in artificial intelligence and machine learning.</p>
       <p>I'm considering pursuing a PhD. My research interests include human decision-making, AI-assisted judgment, adversarial environments, and how people and systems behave under stress.</p>
     </div>
   </div>
@@ -92,15 +92,27 @@
     <a class="proj" href="https://github.com/redhat1032/ransomware-triage">
       <h3>ransomtriage</h3>
       <p>Offline, privacy-preserving first-hour ransomware triage: identify the family, extract IOCs, find free decryptors. Nothing is uploaded.</p>
+      <ul class="badges" aria-label="Built with"><li>Python 3.9+</li><li>CLI</li><li>PyPI</li></ul>
+      <code class="pip">pip install ransomtriage</code>
       <span class="util">GitHub</span>
     </a>
     <a class="proj" href="https://github.com/redhat1032/kevbrief">
       <h3>kevbrief</h3>
-      <p>A security news prioritizer.</p>
+      <p>Pulls CVEs out of eight security news feeds, checks each against the CISA KEV catalog and FIRST EPSS, and puts the ones to patch first at the top.</p>
+      <ul class="badges" aria-label="Built with"><li>Python 3.11+</li><li>Streamlit</li></ul>
       <span class="util">GitHub</span>
     </a>
   </div>
   <p class="fine" style="margin-top:-40px;margin-bottom:72px">ransomtriage is also on <a href="https://pypi.org/project/ransomtriage/">PyPI</a>.</p>
+
+  <div class="rq" aria-labelledby="rqh">
+    <h3 id="rqh" class="subh">Research questions</h3>
+    <ol>
+      <li>When an AI tool offers a recommendation, how do people decide how much to trust it?</li>
+      <li>How does judgment change under time pressure when someone may be actively trying to mislead you?</li>
+      <li>What helps a person notice that a system, or their own read of it, has quietly gone wrong?</li>
+    </ol>
+  </div>
 
   <h3 id="showcase" class="subh">WGU Academic Showcase</h3>
   <p class="soft">Douglas R. Weant: thirty-six courses across three WGU degrees.</p>
@@ -151,26 +163,22 @@
   </div>
   <div>
     <p class="lede">I'm Douglas Weant. I like understanding how things work: the technology, the people, and everything that happens when the plan meets reality.</p>
-    <p>My path runs through military service, food-manufacturing R&amp;D, where real-world constraints have a way of testing every elegant theory, cybersecurity, and computer science. The setting changes. There is always another question to follow.</p>
-    <p>Earlier chapters included service as a Navy Signalman and Master-at-Arms, and in Air Force Reserve Security Forces as CATM NCOIC. I've since completed undergraduate and graduate study in cybersecurity and am finishing graduate work in computer science.</p>
+    <p>The setting changes. There is always another question to follow.</p>
     <p>Those experiences left me interested in how technology, people, and decisions interact, especially when things don't go according to plan.</p>
-    <p>Outside of work, my curiosity wanders. Post-apocalyptic fiction, gaming, coffee, and the history of food all have a way of leading back to questions about adaptation, cooperation, and the systems we depend on.</p>
-    <p>This website isn't a pitch deck. It's a place to collect the things I'm learning and the questions I haven't answered yet.</p>
+    <p>Outside of work, my curiosity wanders into the <a href="#physical">rabbit holes</a> listed above.</p>
     <p><a href="wgu-showcase/">Academic showcase</a></p>
   </div>
 </div></div></section>
 
-<section class="notebook" id="notebook" aria-labelledby="s5"><div class="g"><div class="wrap nb">
+<!-- Field Notes & Workbench: hidden until a real post exists.
+     To enable: remove the `hidden` attribute from this section AND from the "Field Notes" nav links (home, wgu-showcase/, blog/). -->
+<section class="notebook" id="notebook" aria-labelledby="s5" hidden><div class="g"><div class="wrap nb">
   <div>
-    <h2 id="s5">Thinking out loud.</h2>
-    <p class="soft" style="margin-top:20px">Ideas don't need to be finished to be worth exploring.</p>
+    <h2 id="s5">Field Notes &amp; Workbench</h2>
+    <p class="soft" style="margin-top:20px">Notes on assumptions, unexpected results, small rebuilds, and the questions that come next.</p>
     <div class="entries">
-      <div><h3>What am I missing?</h3><p>Notes on assumptions, unexpected results, and the questions that come next.</p></div>
-      <div><h3>Building to understand</h3><p>Sometimes the best way to learn a system is to try recreating a small piece of it.</p></div>
-      <div id="blog"><h3>Notes from the workbench</h3><p>The blog is coming soon. Entries will appear when there's something worth sharing. <a href="blog/">See the blog page</a>.</p></div>
     </div>
   </div>
-  <blockquote>Understand the system. Question the assumptions. Try something. See what happens.</blockquote>
 </div></div></section>
 
 <section class="contact" id="contact" aria-labelledby="s6"><div class="g"><div class="wrap">
@@ -202,5 +210,5 @@
 <dialog class="console" id="console" aria-labelledby="conT"><div class="con-head"><span id="conT">CIC console · facts only</span><button type="button" id="conX" aria-label="Close console">Esc ×</button></div>
 <div class="con-out" id="conOut" role="log" aria-live="polite"></div>
 <form id="conF" class="con-in"><label for="conI">&gt;</label><input id="conI" autocomplete="off" spellcheck="false" aria-describedby="conHelp"><span id="conHelp" class="vh">Type help and press Enter.</span></form></dialog>
-<footer><div class="g"><div class="wrap"><p>© 2026 Douglas Weant</p><p>Made with curiosity. Still being revised.</p></div></div></footer>
+<footer><div class="g"><div class="wrap"><p>© 2026 Douglas Weant</p><p>Made with curiosity. Still being revised.</p><p>WeanTech LLC is my independent company: <a href="https://weantech.com">weantech.com</a>.</p></div></div></footer>
 </body></html>
