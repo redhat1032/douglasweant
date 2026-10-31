@@ -185,3 +185,13 @@ dialog.console::backdrop{background:#0008}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 .subh{font-size:clamp(1.8rem,4vw,2.8rem);margin-bottom:8px}
 .intro-sec{padding-bottom:clamp(32px,5vw,56px)}
+
+/* ---------- project badges, research questions, console button ---------- */
+.badges{list-style:none;display:flex;flex-wrap:wrap;gap:6px;padding:0;margin:0 0 12px}
+.badges li{font:500 .72rem var(--util);color:var(--foam);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+.pip{display:block;font:400 .82rem var(--util);color:var(--lamp);background:var(--night);border:1px solid var(--line);border-radius:3px;padding:8px 10px;margin:0 0 12px;overflow-x:auto;white-space:nowrap}
+.rq{margin:0 0 56px}
+.rq ol{margin:14px 0 0;padding-left:1.3em;max-width:62ch}
+.rq li{margin:0 0 .5em}
+.con-btn{border-color:var(--mist);color:var(--foam)}
+.con-btn:hover,.con-btn:focus-visible{border-color:var(--lamp);color:var(--lamp);background:color-mix(in srgb,var(--lamp) 12%,transparent)}
