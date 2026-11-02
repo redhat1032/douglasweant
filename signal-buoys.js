@@ -24,6 +24,10 @@ window.SignalBuoys=function SignalBuoys({React:R,canvasRef,broadcasting,onBroadc
 .signal-kicker{font-size:11px;letter-spacing:.15em;color:#69e5e9;line-height:1.8}
 .signal-sos{border:1px solid #00f5ff88;padding:12px 16px;min-height:44px;color:#a6f3f5;background:#04121f;font:inherit;font-size:12px;cursor:pointer}
 .signal-sos[aria-pressed="true"]{background:#ffbe0b;color:#08121c;border-color:#ffbe0b}
+.signal-beacon-controls{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.signal-beacon{width:52px;height:52px;flex-shrink:0;border-radius:50%;background:#ffbe0b;border:4px solid #806423;box-shadow:0 0 0 6px #020a14;opacity:.12}
+.signal-beacon[data-active="true"]{border-color:#ffe19a;box-shadow:0 0 18px #ffbe0b80;animation:signal-sos-flash 10.2s steps(1,end) infinite}
+.signal-beacon-caption{font-size:10px;line-height:1.8;color:#aac4d6;margin:8px 0 0}.signal-motion-note{display:none}
+@keyframes signal-sos-flash{0%{opacity:1}2.941176%{opacity:.12}5.882353%{opacity:1}8.823529%{opacity:.12}11.764706%{opacity:1}14.705882%{opacity:.12}23.529412%{opacity:1}32.352941%{opacity:.12}35.294118%{opacity:1}44.117647%{opacity:.12}47.058824%{opacity:1}55.882353%{opacity:.12}64.705882%{opacity:1}67.647059%{opacity:.12}70.588235%{opacity:1}73.529412%{opacity:.12}76.470588%{opacity:1}79.411765%{opacity:.12}100%{opacity:1}}
 .signal-body{max-width:1100px;margin:auto;padding:clamp(28px,5vw,56px) clamp(20px,4vw,48px)}
 .signal-heading{font:700 clamp(30px,5vw,48px)/1.2 Cinzel,Georgia,serif;color:#e7faff;margin:16px 0}
 .signal-intro{max-width:700px;color:#aac4d6;font-size:14px;line-height:1.8}.signal-channel-list{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin:36px 0}
@@ -41,11 +45,11 @@ window.SignalBuoys=function SignalBuoys({React:R,canvasRef,broadcasting,onBroadc
 @keyframes signal-bob{50%{transform:translateY(-5px)}}
 @media(max-width:800px){.signal-channel-list{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:420px){.signal-channel-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
-@media(prefers-reduced-motion:reduce){.signal-float{animation:none}}
+@media(prefers-reduced-motion:reduce){.signal-float{animation:none}.signal-beacon[data-active="true"]{animation:none;opacity:1}.signal-motion-note{display:block}}
 `),
  el('canvas',{ref:canvasRef,className:'signal-ocean','aria-hidden':true}),
  el('div',{className:'signal-mast'},el('div',{className:'signal-kicker'},'04 / SIGNAL BUOYS • SIX PERSONAL CHANNELS'),
- el('button',{type:'button',className:'signal-sos','aria-pressed':broadcasting,onClick:()=>onBroadcast(previous=>!previous)},broadcasting?'Stop SOS light ■':'Test SOS light ··· ——— ···')),
+ el('div',{className:'signal-beacon-controls'},el('div',{className:'signal-beacon','data-active':broadcasting,role:'img','aria-label':broadcasting?'SOS signal lamp active':'SOS signal lamp off'}),el('div',null,el('button',{type:'button',className:'signal-sos','aria-pressed':broadcasting,onClick:()=>onBroadcast(previous=>!previous)},broadcasting?'Stop SOS light ■':'Test SOS light ··· ——— ···'),el('p',{className:'signal-beacon-caption'},'Three short · three long · three short'),broadcasting&&el('p',{className:'signal-beacon-caption signal-motion-note'},'Steady light: reduced motion is enabled.')))),
  el('div',{className:'signal-body'},el('div',{className:'signal-kicker'},'TUNE INTO A DIFFERENT SIDE OF THE WATCH'),
  el('h2',{className:'signal-heading'},'There’s a person behind the projects.'),
  el('p',{className:'signal-intro'},'Six buoys, six interests and experiences. Select one to open its signal and see how it connects to the way I think and work.'),
@@ -61,7 +65,7 @@ window.SignalBuoys=function SignalBuoys({React:R,canvasRef,broadcasting,onBroadc
  el('div',{className:'signal-actions'},el('button',{type:'button',className:'signal-action',onClick:()=>onNavigate(channel.destination)},channel.action+' →'),
  el('button',{type:'button',className:'signal-action',onClick:()=>select((selected+1)%channels.length)},'Next buoy →'))),
  el('p',{className:'signal-footnote',role:'status'},visited.size+' of '+channels.length+' channels explored.'),
- el('p',{className:'signal-footnote'},'Hold Space outside the controls, or use “Test SOS light,” to light the visual beacon. No message is sent.')
+ el('p',{className:'signal-footnote'},'Hold Space outside the controls, or use “Test SOS light,” to flash the signal lamp in SOS Morse code. The ocean waves are background scenery. No message is sent.')
  ));
 };
 })();
