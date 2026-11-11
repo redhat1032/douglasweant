@@ -5,12 +5,10 @@ const channels=[{"id":"navy","icon":"⚓","label":"NAVY SIGNALMAN","title":"The 
 window.SignalBuoys=function SignalBuoys({React:R,canvasRef,broadcasting,onBroadcast,onNavigate}){
  const el=R.createElement;
  const [selected,setSelected]=R.useState(null),[visited,setVisited]=R.useState(()=>new Set());
- const held=R.useRef(false);
- const buoyRefs=R.useRef([]);
+ const held=R.useRef(false),buoyRefs=R.useRef([]);
  const channel=selected===null?null:channels[selected];
- function focusBuoy(index){const buoy=buoyRefs.current[index];if(buoy)buoy.focus();}
- function select(index){if(selected===index)focusBuoy(index);setSelected(current=>{const next=current===index?null:index;if(next!==null)setVisited(previous=>{const marks=new Set(previous);marks.add(next);return marks;});return next;});}
- function closePanel(){focusBuoy(selected);setSelected(null);}
+ function select(index){setSelected(current=>{const next=current===index?null:index;if(next!==null)setVisited(previous=>{const marks=new Set(previous);marks.add(next);return marks;});return next;});}
+ function closePanel(){const index=selected;setSelected(null);if(index!==null&&buoyRefs.current[index])buoyRefs.current[index].focus();}
  R.useEffect(()=>{if(selected===null)return;const onKey=event=>{if(event.key==='Escape')closePanel();};window.addEventListener('keydown',onKey);return()=>window.removeEventListener('keydown',onKey);},[selected]);
  R.useEffect(()=>{
   const interactive=target=>target&&target.closest&&target.closest('button,a,input,textarea,select,[contenteditable="true"],[role="button"]');
@@ -58,8 +56,8 @@ window.SignalBuoys=function SignalBuoys({React:R,canvasRef,broadcasting,onBroadc
  el('h2',{className:'signal-heading'},'There’s a person behind the projects.'),
  el('p',{className:'signal-intro'},'Six buoys, six interests and experiences. Select one to open its signal and see how it connects to the way I think and work.'),
  el('div',{className:'signal-channel-list',role:'group','aria-label':'Choose a personal channel'},
- channels.map((item,index)=>el('button',{key:item.id,type:'button',className:'signal-channel',ref:node=>{buoyRefs.current[index]=node;},
- 'aria-label':'Open '+item.label+' signal','aria-pressed':selected===index,'aria-controls':'signal-channel-panel',onClick:()=>select(index)},
+ channels.map((item,index)=>el('button',{key:item.id,type:'button',className:'signal-channel',
+ ref:node=>{buoyRefs.current[index]=node;},'aria-label':'Open '+item.label+' signal','aria-pressed':selected===index,'aria-controls':'signal-channel-panel',onClick:()=>select(index)},
  el('span',{className:'signal-channel-number'},'CHANNEL '+String(index+1).padStart(2,'0')),
  el('span',{className:'signal-float','aria-hidden':true,style:{animationDelay:(index*.2)+'s'}},item.icon),
  el('span',{className:'signal-label'},item.label)))),
@@ -68,7 +66,7 @@ window.SignalBuoys=function SignalBuoys({React:R,canvasRef,broadcasting,onBroadc
  el('h3',{id:'signal-channel-title'},channel.title),el('p',null,channel.body),el('p',{className:'signal-connection'},channel.connection),
  el('div',{className:'signal-actions'},el('button',{type:'button',className:'signal-action',onClick:()=>onNavigate(channel.destination)},channel.action+' →'),
  el('button',{type:'button',className:'signal-action',onClick:()=>select((selected+1)%channels.length)},'Next buoy →'),
- el('button',{type:'button',className:'signal-action',onClick:closePanel},'Close'))),
+ el('button',{type:'button',className:'signal-action',onClick:()=>closePanel()},'Close'))),
  el('p',{className:'signal-footnote',role:'status'},visited.size+' of '+channels.length+' channels explored.'),
  el('p',{className:'signal-footnote'},'Hold Space outside the controls, or use “Test SOS light,” to flash the signal lamp in SOS Morse code. The ocean waves are background scenery. No message is sent.')
  ));
