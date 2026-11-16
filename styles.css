@@ -196,3 +196,8 @@ section{padding-block:clamp(36px,6vw,72px)}
   html{scroll-behavior:auto}
   *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
 }
+
+.watchband{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);font-family:var(--util);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mist);display:grid;gap:6px}
+.watchband-line{margin:0}
+.watchband-label{color:var(--lamp)}
+.watchband a{color:inherit}
