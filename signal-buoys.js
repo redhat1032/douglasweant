@@ -29,7 +29,7 @@ window.SignalBuoys=function SignalBuoys({React:R,canvasRef,broadcasting,onBroadc
 .signal-beacon-caption{font-size:10px;line-height:1.8;color:#aac4d6;margin:8px 0 0}.signal-motion-note{display:none}
 @keyframes signal-sos-flash{0%{opacity:1}2.941176%{opacity:.12}5.882353%{opacity:1}8.823529%{opacity:.12}11.764706%{opacity:1}14.705882%{opacity:.12}23.529412%{opacity:1}32.352941%{opacity:.12}35.294118%{opacity:1}44.117647%{opacity:.12}47.058824%{opacity:1}55.882353%{opacity:.12}64.705882%{opacity:1}67.647059%{opacity:.12}70.588235%{opacity:1}73.529412%{opacity:.12}76.470588%{opacity:1}79.411765%{opacity:.12}100%{opacity:1}}
 .signal-body{max-width:1100px;margin:auto;padding:clamp(28px,5vw,56px) clamp(20px,4vw,48px)}
-.signal-heading{font:700 clamp(30px,5vw,48px)/1.2 Cinzel,Georgia,serif;color:#e7faff;margin:16px 0}
+.signal-heading{font:700 clamp(30px,5vw,48px)/1.2 "Source Serif 4",Georgia,serif;color:#e7faff;margin:16px 0}
 .signal-intro{max-width:700px;color:#aac4d6;font-size:14px;line-height:1.8}.signal-channel-list{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:14px;margin:36px 0}
 .signal-channel{min-width:0;display:flex;flex-direction:column;align-items:center;gap:14px;padding:16px 8px;background:#04121faa;color:#b2d1e4;border:1px solid #34546c;cursor:pointer;font:inherit;border-radius:4px}
 .signal-float{width:58px;height:58px;border-radius:50%;border:2px solid #00f5ff77;background:#06233f;display:grid;place-items:center;font-size:24px;animation:signal-bob 3s ease-in-out infinite}
@@ -37,7 +37,7 @@ window.SignalBuoys=function SignalBuoys({React:R,canvasRef,broadcasting,onBroadc
 .signal-channel[aria-pressed="true"] .signal-float{border-color:#ffbe0b;box-shadow:0 0 24px #ffbe0b33}
 .signal-label{font-size:12px;line-height:1.6;text-align:center;overflow-wrap:anywhere}.signal-channel-number{font-size:10px;letter-spacing:.1em;color:#8ba9bf}
 .signal-panel{background:#020a14ed;border:1px solid #00f5ff55;border-top:3px solid #ffbe0b;padding:clamp(22px,4vw,36px);max-width:850px;margin:auto}
-.signal-panel h3{font:700 clamp(24px,4vw,32px)/1.3 Cinzel,Georgia,serif;margin:16px 0;color:#f1f7fa}
+.signal-panel h3{font:700 clamp(24px,4vw,32px)/1.3 "Source Serif 4",Georgia,serif;margin:16px 0;color:#f1f7fa}
 .signal-panel p{font-size:14px;line-height:1.9;color:#b9cfdf}.signal-connection{border-left:2px solid #ffbe0b;padding-left:18px}
 .signal-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.signal-action{display:inline-block;text-decoration:none;border:1px solid #4b6f89;background:#0d2539;color:#d5edf9;min-height:44px;padding:12px 16px;font:inherit;font-size:12px;line-height:1.8;cursor:pointer}.signal-action:hover{background:#1c3b50}
 .signal-buoys button:focus-visible{outline:3px solid #ffbe0b;outline-offset:4px}

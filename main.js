@@ -108,7 +108,7 @@ d.querySelectorAll('[data-copy]').forEach(btn=>btn.addEventListener('click',()=>
 const dlg=d.getElementById('console'),out=d.getElementById('conOut'),inp=d.getElementById('conI'),btn=d.getElementById('conBtn');if(!dlg)return;btn.hidden=false;const vv=window.visualViewport;if(vv){const fit=()=>{dlg.style.setProperty('--vvh',vv.height+'px');dlg.style.setProperty('--kb',Math.max(0,innerHeight-vv.height-vv.offsetTop)+'px')};vv.addEventListener('resize',fit);vv.addEventListener('scroll',fit);fit();}
 const C={help:'Commands: whoami, service, study, projects, showcase, contact, pgp, morse <text>, watch <text>, clear, exit',
 whoami:"Douglas Weant. Navy Signalman, food-manufacturing R&D, graduate study in cybersecurity and AI.",
-service:'Navy Signalman and Master-at-Arms, then Air Force Reserve Security Forces — NCOIC of CATM for the 932nd and then the 375th Air Wing.',
+service:'Navy Signalman and Master-at-Arms, then Air Force Security Forces – CATM. In the reserves, NCOIC of CATM for an air wing.',
 study:"B.S. Cybersecurity & IA — 2024 · M.S. Cybersecurity & IA — 2025 · M.S. Computer Science, AI/ML — in progress. I'm considering pursuing a PhD.",
 projects:'ransomtriage — github.com/redhat1032/ransomware-triage · pypi.org/project/ransomtriage\nkevbrief — github.com/redhat1032/kevbrief',
 showcase:'Thirty-six courses across three WGU degrees → wgu-showcase/',contact:'dweant@proton.me — PGP-encrypted email is preferred.',

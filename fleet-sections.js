@@ -6,11 +6,11 @@ const objects=[{"id":"lamp","icon":"◐","label":"Signal lamp","x":15,"y":22,"r"
 const email='dweant@proton.me';
 const fingerprint='DA37 81CC FFE4 8F08 B6AF F5F9 640A 90CF 4215 36DE';
 const styles=`
-.fleet-section{--accent:#ff6a00;--ink:#eee;--muted:#b2bac4;--panel:#11171e;min-height:calc(100vh - 56px);background:#0a0a0a;color:var(--ink);font-family:'JetBrains Mono',monospace}
+.fleet-section{--accent:#e0a23a;--ink:#f4f7f5;--muted:#c5d2cb;--panel:#1b2621;min-height:calc(100vh - 56px);background:#101614;color:var(--ink);font-family:'JetBrains Mono',monospace}
 .fleet-section *{box-sizing:border-box}.fleet-section .section-mast{padding:18px clamp(20px,4vw,48px);border-bottom:1px solid var(--accent);font-size:11px;line-height:1.8;letter-spacing:.13em;color:var(--accent)}
 .fleet-section .section-content{max-width:1180px;margin:auto;padding:36px clamp(20px,4vw,48px)}
-.fleet-section h2{font:700 clamp(30px,5vw,48px)/1.2 Cinzel,Georgia,serif;margin:12px 0 20px}
-.fleet-section h3{font:700 24px/1.4 Cinzel,Georgia,serif;margin:12px 0}
+.fleet-section h2{font:700 clamp(30px,5vw,48px)/1.2 "Source Serif 4",Georgia,serif;margin:12px 0 20px}
+.fleet-section h3{font:700 24px/1.4 "Source Serif 4",Georgia,serif;margin:12px 0}
 .fleet-section p{font-size:14px;line-height:1.9;color:var(--muted);max-width:760px}
 .fleet-section .section-kicker{font-size:11px;line-height:1.8;letter-spacing:.12em;color:var(--accent)}
 .fleet-section button,.fleet-section a.section-button{min-height:44px;padding:12px 16px;border:1px solid var(--accent);background:transparent;color:var(--ink);font:inherit;font-size:12px;line-height:1.6;cursor:pointer;text-decoration:none;display:inline-block}
@@ -20,12 +20,12 @@ const styles=`
 .fleet-section .section-card{background:var(--panel);border:1px solid #7e899344;padding:clamp(20px,3vw,32px);min-width:0}
 .fleet-section .section-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}.fleet-section .section-small{font-size:11px;line-height:1.9;overflow-wrap:anywhere}
 .recorder-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);gap:24px;margin:30px 0}
-.recorder-chapters{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}.recorder-chapters button[aria-pressed="true"]{background:#ff6a00;color:#111}
-.recorder-dial{width:230px;height:230px;max-width:100%;margin:24px auto;border:14px solid #292929;border-radius:50%;display:grid;place-items:center;background:repeating-conic-gradient(#ff6a0066 0deg 1deg,transparent 1deg 15deg);position:relative;touch-action:none;cursor:ew-resize}
-.recorder-dial-center{width:82%;height:82%;background:#101010;border:1px solid #ff6a0077;border-radius:50%;display:grid;place-items:center;font-size:36px;font-weight:bold;color:#ff9a4a}
-.recorder-needle{position:absolute;left:50%;top:50%;height:40%;width:3px;background:#ff6a00;transform-origin:50% 0;pointer-events:none}
-.recorder-slider{display:block;width:100%;accent-color:#ff6a00;margin:20px 0;min-height:32px}
-.recorder-wave{width:100%;height:80px;color:#ff6a00;opacity:.6;margin-top:24px}
+.recorder-chapters{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0}.recorder-chapters button[aria-pressed="true"]{background:#e0a23a;color:#111}
+.recorder-dial{width:230px;height:230px;max-width:100%;margin:24px auto;border:14px solid #292929;border-radius:50%;display:grid;place-items:center;background:repeating-conic-gradient(#e0a23a66 0deg 1deg,transparent 1deg 15deg);position:relative;touch-action:none;cursor:ew-resize}
+.recorder-dial-center{width:82%;height:82%;background:#101010;border:1px solid #e0a23a77;border-radius:50%;display:grid;place-items:center;font-size:36px;font-weight:bold;color:#ff9a4a}
+.recorder-needle{position:absolute;left:50%;top:50%;height:40%;width:3px;background:#e0a23a;transform-origin:50% 0;pointer-events:none}
+.recorder-slider{display:block;width:100%;accent-color:#e0a23a;margin:20px 0;min-height:32px}
+.recorder-wave{width:100%;height:80px;color:#e0a23a;opacity:.6;margin-top:24px}
 .war-room{--accent:#d9c5a0;--ink:#f0e2c7;--muted:#c3b496;--panel:#261f17;background:#1a150f}
 .war-table{position:relative;height:480px;border:1px solid #d9c5a044;border-radius:12px;background:repeating-linear-gradient(90deg,#0000000c 0 2px,transparent 2px 28px),linear-gradient(#3c2e20,#231b13);margin:24px 0}
 .fleet-section .war-object{position:absolute;width:130px;min-height:114px;padding:12px;transform:translate(-50%,-50%) rotate(var(--rotation));background:#f2e7cc;color:#2b2117;border:2px solid #806f55;border-radius:9px;box-shadow:0 10px 22px #0006;touch-action:none;user-select:none;display:flex;flex-direction:column;justify-content:center;gap:10px;cursor:grab;overflow-wrap:anywhere}
@@ -34,7 +34,7 @@ const styles=`
 .war-dossier{border-top:3px solid #d9c5a0}.war-dossier p{max-width:850px}
 .contact-page{--accent:#00f5ff;--ink:#e7f5ff;--muted:#b3c9db;--panel:#0a1423;background:radial-gradient(ellipse at 20% 10%,#143340,#020a14 60%)}
 .contact-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:24px;margin:30px 0}
-.contact-address{font:700 clamp(20px,4vw,32px)/1.5 Cinzel,Georgia,serif;color:#ffce5c;overflow-wrap:anywhere}
+.contact-address{font:700 clamp(20px,4vw,32px)/1.5 "Source Serif 4",Georgia,serif;color:#ffce5c;overflow-wrap:anywhere}
 .contact-fingerprint{font-size:13px;line-height:2;overflow-wrap:anywhere;color:#d4e7f5;user-select:text}
 .contact-message{border-left:2px solid #ffbe0b;padding-left:20px}.contact-footer{margin-top:40px;padding-top:24px;border-top:1px solid #67869b55}
 @media(max-width:800px){.recorder-grid,.contact-grid{grid-template-columns:1fr}}
