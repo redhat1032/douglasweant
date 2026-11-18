@@ -66,7 +66,13 @@ h3{font-size:1.35rem;line-height:1.25}
 p{margin:0 0 1rem;max-width:68ch}
 .skip{position:absolute;left:8px;top:8px;z-index:50;background:var(--lamp);color:var(--lamp-ink);padding:10px 14px;font:500 .85rem var(--util);transform:translateY(-150%)}
 .skip:focus{transform:none}
-.wrap{width:min(1080px,calc(100% - 2rem));margin-inline:auto}
+.wrap,.page,.play-main{
+  width:min(1080px,100%);
+  margin-inline:auto;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+}
+.play-main{width:min(1100px,100%);margin-bottom:12px}
 .kicker,.util{font-family:var(--util);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--mist)}
 .lede{font-size:clamp(1.2rem,2vw,1.4rem);line-height:1.5;max-width:42ch}
 .brandline{font-size:clamp(1.45rem,3vw,2.15rem);font-style:italic;line-height:1.25;max-width:18em;color:var(--foam)}
@@ -97,6 +103,7 @@ p{margin:0 0 1rem;max-width:68ch}
 .btn.solid:hover{background:var(--foam);color:var(--night);border-color:var(--foam)}
 
 .page{padding-block:clamp(28px,6vw,72px)}
+html{overflow-x:clip}
 .page-intro{margin-bottom:clamp(28px,5vw,48px)}
 .page-intro .lede{margin-top:14px}
 .stack{display:grid;gap:clamp(28px,5vw,56px)}
@@ -145,7 +152,7 @@ p{margin:0 0 1rem;max-width:68ch}
 details.note-bottle{margin-top:16px;border-top:1px solid var(--line);padding-top:12px}
 details.note-bottle summary{cursor:pointer;min-height:44px;display:flex;align-items:center;color:var(--accent-text)}
 
-.play-main{width:min(1100px,calc(100% - 1rem));margin:0 auto 12px}
+.play-main{padding-top:12px}
 .play-note{color:var(--mist);font-size:.95rem;margin:10px 0}
 .play-frame{width:100%;height:calc(100dvh - 8.5rem);min-height:420px;border:1px solid var(--line);border-radius:12px;background:#050308}
 
